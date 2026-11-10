@@ -1,20 +1,29 @@
-<!DOCTYPE html><html class="dark" lang="en"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Mikano International | Industrial Power &amp; Automotive Engineering</title>
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<style>
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mikano International | Industrial Power &amp; Automotive Engineering</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <style>
     @layer base {
-      html, body {
+
+      html,
+      body {
         margin: 0;
         padding: 0;
         scroll-behavior: smooth;
       }
     }
-    
+
     /* Dark Theme Default Tokens */
     :root {
       --bg-surface: #08090b;
@@ -62,16 +71,172 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
+    a,
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--brand-primary);
+      outline-offset: 3px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    .theme-card {
+      transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .theme-pill-btn,
+    button {
+      transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    @media (hover: hover) {
+      .theme-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 36px -18px rgba(8, 145, 178, 0.35);
+      }
+
+      .theme-pill-btn:hover,
+      button:hover {
+        transform: translateY(-2px);
+      }
+    }
+
+    .motion-ready [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    .motion-ready [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-slide {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .hero-slide.is-active {
+      opacity: 1;
+    }
+
+    .hero-slide img {
+      transform: scale(1.02);
+      transition: transform 7s ease-out;
+    }
+
+    .hero-slide.is-active img {
+      transform: scale(1.08);
+    }
+
+    .hero-slide-control {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 9999px;
+      background: rgba(148, 163, 184, 0.7);
+      transition: width 0.25s ease, background-color 0.25s ease;
+    }
+
+    .hero-slide-control[aria-pressed="true"] {
+      width: 1.5rem;
+      background: var(--brand-primary);
+    }
+
+    .partner-marquee {
+      overflow: hidden;
+    }
+
+    .partner-marquee-track {
+      display: flex;
+      width: max-content;
+      animation: partner-marquee-scroll 32s linear infinite;
+    }
+
+    .partner-marquee:hover .partner-marquee-track,
+    .partner-marquee:focus-within .partner-marquee-track {
+      animation-play-state: paused;
+    }
+
+    .partner-marquee-group {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .partner-marquee-item {
+      display: flex;
+      flex: 0 0 clamp(8.5rem, 16vw, 12rem);
+      height: 5rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      background: #fff;
+      padding: 0.75rem;
+    }
+
+    .partner-marquee-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes partner-marquee-scroll {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .whatsapp-float {
+      isolation: isolate;
+    }
+
+    .whatsapp-float::before {
+      position: absolute;
+      z-index: -1;
+      inset: -4px;
+      border: 2px solid #25d366;
+      border-radius: inherit;
+      content: "";
+      animation: whatsapp-pulse 2.4s ease-out infinite;
+    }
+
+    @keyframes whatsapp-pulse {
+      0% {
+        opacity: 0.65;
+        transform: scale(0.92);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(1.35);
+      }
+    }
+
     ::-webkit-scrollbar {
       width: 6px;
     }
+
     ::-webkit-scrollbar-track {
       background: var(--bg-surface);
     }
+
     ::-webkit-scrollbar-thumb {
       background: #475569;
       border-radius: 9999px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: var(--brand-primary);
     }
@@ -82,50 +247,94 @@
       border-color: var(--border-card) !important;
       box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
     }
+
     .theme-elevated {
       background-color: var(--bg-surface-elevated) !important;
       border-color: var(--border-subtle) !important;
     }
+
     .theme-inner-box {
       background-color: var(--card-inner-box) !important;
       border-color: var(--border-subtle) !important;
     }
+
     .theme-border {
       border-color: var(--border-subtle) !important;
     }
+
     .theme-header {
       background-color: var(--header-bg) !important;
       border-color: var(--border-subtle) !important;
     }
+
     .theme-heading {
       color: var(--text-primary) !important;
     }
+
     .theme-muted {
       color: var(--text-muted) !important;
     }
+
     .theme-accent {
       color: var(--brand-accent-text) !important;
     }
+
     .theme-pill-btn {
       background-color: var(--brand-primary) !important;
       color: var(--brand-btn-text) !important;
     }
+
     html.light .theme-card-overlay {
       background: rgba(15, 23, 42, 0.35) !important;
     }
+
     html.light .theme-footer {
       background-color: #f1f5f9 !important;
       border-top: 1px solid #e2e8f0;
     }
-    html.light select, html.light input {
+
+    html.light select,
+    html.light input {
       color: #0f172a !important;
     }
+
     html.light input::placeholder {
       color: #94a3b8 !important;
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      html.motion-ready [data-reveal],
+      html.motion-ready [data-reveal].is-visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      .hero-slide {
+        transition: none;
+      }
+
+      .hero-slide img {
+        transform: none;
+        transition: none;
+      }
+
+      .partner-marquee-track {
+        animation: none;
+        transform: none;
+      }
+    }
   </style>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
@@ -158,807 +367,1166 @@
     };
   </script>
 </head>
+
 <body class="selection:bg-primary selection:text-black antialiased">
-<!-- MINIMALIST EDITORIAL HEADER -->
-<header class="fixed top-0 left-0 right-0 z-50 theme-header backdrop-blur-xl border-b theme-border transition-colors duration-300">
-<div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
-<!-- Brand Wordmark -->
-<a class="flex items-center gap-3 group" href="#">
-<div class="w-8 h-8 rounded-lg theme-elevated border flex items-center justify-center theme-accent group-hover:border-primary/50 transition-colors">
-<span class="material-symbols-outlined text-[18px]">bolt</span>
-</div>
-<div class="flex flex-col">
-<span class="font-display font-bold text-base tracking-wider uppercase theme-heading leading-tight">MIKANO</span>
-<span class="text-[10px] uppercase font-mono tracking-widest theme-accent leading-tight">International</span>
-</div>
-</a>
-<!-- Streamlined Links -->
-<nav class="hidden md:flex items-center gap-8 text-sm font-medium theme-muted">
-<a class="hover:text-primary transition-colors" href="#divisions">Divisions</a>
-<a class="hover:text-primary transition-colors" href="#automotive">Automotive</a>
-<a class="hover:text-primary transition-colors" href="#power-gen">Power Gen</a>
-<a class="hover:text-primary transition-colors" href="#alliances">Alliances</a>
-<a class="hover:text-primary transition-colors" href="#quote-wizard">Quote Wizard</a>
-</nav>
-<!-- Action & Hotline + Mode Toggle -->
-<div class="flex items-center gap-3 sm:gap-4">
-<!-- Mode Toggle Button (Desktop) -->
-<button aria-label="Toggle Light and Dark Mode" class="p-2 sm:px-3 sm:py-1.5 rounded-full theme-elevated border theme-border theme-muted hover:text-primary transition-all flex items-center gap-1.5 focus:outline-none" id="theme-toggle-desktop" onclick="toggleThemeMode()" type="button">
-<span class="material-symbols-outlined text-[18px] transition-transform duration-300 rotate-0 dark:rotate-0" id="theme-icon-desktop">light_mode</span>
-<span class="hidden lg:inline text-xs font-mono font-medium" id="theme-text-desktop">Light</span>
-</button>
-<a class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full theme-elevated border theme-border text-xs font-mono theme-muted hover:text-primary transition-all" href="https://wa.me/2348026250869" target="_blank"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span class="">WhatsApp: 08026250869</span></a>
-<a class="hidden sm:inline-flex px-5 py-2 rounded-full theme-pill-btn font-semibold text-xs tracking-wider uppercase shadow-[0_0_20px_rgba(0,210,238,0.25)] hover:opacity-90 transition-all" href="#quote-wizard">Request Quote</a>
-<button aria-label="Toggle Mobile Menu" class="md:hidden flex items-center justify-center p-2 rounded theme-heading focus:outline-none hover:bg-slate-500/10 transition-colors" onclick="const m = document.getElementById('mobile-nav-drawer'); m.classList.toggle('hidden');"><span class="material-symbols-outlined text-2xl">menu</span></button>
-</div>
-</div>
-<!-- Mobile Drawer -->
-<div class="hidden md:hidden theme-header border-t theme-border px-6 py-6 space-y-4" id="mobile-nav-drawer">
-<nav class="flex flex-col space-y-3 text-sm font-medium theme-muted">
-<a class="hover:text-primary py-1 transition-colors" href="#divisions" onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Divisions</a>
-<a class="hover:text-primary py-1 transition-colors" href="#automotive" onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Automotive</a>
-<a class="hover:text-primary py-1 transition-colors" href="#power-gen" onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Power Gen</a>
-<a class="hover:text-primary py-1 transition-colors" href="#alliances" onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Alliances</a>
-<a class="hover:text-primary py-1 transition-colors" href="#quote-wizard" onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Quote Wizard</a>
-</nav>
-<div class="pt-4 border-t theme-border flex flex-col gap-3">
-<!-- Mobile Theme Toggle -->
-<div class="flex items-center justify-between py-1">
-<span class="text-xs font-mono theme-muted">Theme Appearance</span>
-<button aria-label="Toggle theme appearance" class="px-3.5 py-1.5 rounded-full theme-elevated border theme-border flex items-center gap-2 text-xs font-mono theme-heading" id="theme-toggle-mobile" onclick="toggleThemeMode()" type="button">
-<span class="material-symbols-outlined text-base" id="theme-icon-mobile">light_mode</span>
-<span id="theme-text-mobile" class="">Light Mode</span>
-</button>
-</div>
-<a class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full theme-elevated border theme-border text-xs font-mono theme-muted hover:text-primary transition-all" href="https://wa.me/2348026250869" target="_blank"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span class="">WhatsApp: 08026250869</span></a>
-<a class="w-full text-center py-2.5 rounded-full theme-pill-btn font-semibold text-xs tracking-wider uppercase" href="#quote-wizard" onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Request Quote</a>
-</div>
-</div>
-</header>
-<main class="w-full pt-20">
-<!-- HERO SECTION WITH LUXURY EDITORIAL BREATHING ROOM -->
-<section class="relative pb-28 lg:pb-36 overflow-hidden border-b theme-border pt-20 lg:pt-12">
-<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-<!-- Top Badge -->
-<div class="flex items-center gap-2 mb-4">
-<div class="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full theme-elevated border theme-border text-xs font-mono theme-accent">
-<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+  <!-- MINIMALIST EDITORIAL HEADER -->
+  <header
+    class="fixed top-0 left-0 right-0 z-50 theme-header backdrop-blur-xl border-b theme-border transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <!-- Brand Wordmark -->
+      <a class="flex items-center gap-3 group" href="#"><img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfBR-p7FVvN4HxPA7R6nmXs-LczKbd4qX8WCtb3Bc3CCCoaGCVzZ7_rOLZLoXRT0LpVf0FdXHxny-wmr5Cj2Sti5gpmv4JjkhOI-RXyD4FgV4ikk9WfExgiN68DmgfpUi3dQcID-kROX-YVuKNX5KmhM_9ZiPNrxUaDvtQdxTFcJaTXq9w0bJKhcsTskzwZ08LTeaAm5XoT4eaBCiQlrtjlBMN8qnafQqSzLD-PyWVrphHs5-G7AyE"
+          alt="Mikano International Limited"
+          class="h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-300"></a>
+      <!-- Streamlined Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium theme-muted">
+        <a class="hover:text-primary transition-colors" href="#divisions">Divisions</a>
+        <a class="hover:text-primary transition-colors" href="#automotive">Automotive</a>
+        <a class="hover:text-primary transition-colors" href="#power-gen">Power Gen</a>
+        <a class="hover:text-primary transition-colors" href="#alliances">Alliances</a>
+        <a class="hover:text-primary transition-colors" href="#quote-wizard">Quote Wizard</a>
+      </nav>
+      <!-- Action & Hotline + Mode Toggle -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <!-- Mode Toggle Button (Desktop) -->
+
+        
+        <a class="hidden sm:inline-flex px-5 py-2 rounded-full theme-pill-btn font-semibold text-xs tracking-wider uppercase shadow-[0_0_20px_rgba(0,210,238,0.25)] hover:opacity-90 transition-all"
+          href="#quote-wizard">Request Quote</a>
+        <button aria-label="Toggle Mobile Menu"
+          class="md:hidden flex items-center justify-center p-2 rounded theme-heading focus:outline-none hover:bg-slate-500/10 transition-colors"
+          onclick="const m = document.getElementById('mobile-nav-drawer'); m.classList.toggle('hidden');"><span
+            class="material-symbols-outlined text-2xl">menu</span></button>
+      </div>
+    </div>
+    <!-- Mobile Drawer -->
+    <div class="hidden md:hidden theme-header border-t theme-border px-6 py-6 space-y-4" id="mobile-nav-drawer">
+      <nav class="flex flex-col space-y-3 text-sm font-medium theme-muted">
+        <a class="hover:text-primary py-1 transition-colors" href="#divisions"
+          onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Divisions</a>
+        <a class="hover:text-primary py-1 transition-colors" href="#automotive"
+          onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Automotive</a>
+        <a class="hover:text-primary py-1 transition-colors" href="#power-gen"
+          onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Power Gen</a>
+        <a class="hover:text-primary py-1 transition-colors" href="#alliances"
+          onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Alliances</a>
+        <a class="hover:text-primary py-1 transition-colors" href="#quote-wizard"
+          onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Quote Wizard</a>
+      </nav>
+      <div class="pt-4 border-t theme-border flex flex-col gap-3">
+        <!-- Mobile Theme Toggle -->
+
+        <a class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full theme-elevated border theme-border text-xs font-mono theme-muted hover:text-primary transition-all"
+          href="tel:+2348026250869"><span
+            class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span class="">Call Dealer</span></a>
+        <a class="w-full text-center py-2.5 rounded-full theme-pill-btn font-semibold text-xs tracking-wider uppercase"
+          href="#quote-wizard" onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Request
+          Quote</a>
+      </div>
+    </div>
+  </header>
+  <main class="w-full pt-20">
+    <!-- HERO SECTION WITH LUXURY EDITORIAL BREATHING ROOM -->
+    <section class="relative pb-28 lg:pb-36 overflow-hidden border-b theme-border pt-20 lg:pt-12">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <!-- Top Badge -->
+        <div class="flex items-center gap-2 mb-4">
+          <div
+            class="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full theme-elevated border theme-border text-xs font-mono theme-accent">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
             PAN-AFRICAN CONGLOMERATE // EST. 1993
           </div>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-<!-- Left Headline Column -->
-<div class="lg:col-span-7">
-<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight theme-heading leading-[1.08] mb-6">
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <!-- Left Headline Column -->
+          <div class="lg:col-span-7">
+            <h1
+              class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight theme-heading leading-[1.08] mb-6">
               Powering Progress.<br>
-<span class="theme-accent">Driving Innovation.</span>
-</h1>
-<p class="theme-muted text-base sm:text-lg max-w-xl font-normal leading-relaxed mb-10">
-              From Sub-Saharan Africa’s largest generator assembly plant to next-gen Electric Vehicles and certified industrial switchgear, Mikano delivers turnkey engineering excellence.
+              <span class="theme-accent">Driving Innovation.</span>
+            </h1>
+            <p class="theme-muted text-base sm:text-lg max-w-xl font-normal leading-relaxed mb-10">
+              From Sub-Saharan Africa’s largest generator assembly plant to next-gen Electric Vehicles and certified
+              industrial switchgear, Mikano delivers turnkey engineering excellence.
             </p>
-<!-- Pill CTAs -->
-<div class="flex flex-wrap items-center gap-4 mb-8">
-<a class="px-7 py-3.5 rounded-full theme-pill-btn font-semibold text-sm shadow-[0_0_25px_rgba(0,210,238,0.25)] hover:opacity-90 transition-all flex items-center gap-2" href="#divisions">
-<span class="">Explore Products</span>
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-</a>
-<a class="px-7 py-3.5 rounded-full theme-card border theme-border theme-heading font-medium text-sm hover:opacity-90 transition-all flex items-center gap-2" href="mailto:emmanueluko00@gmail.com"><span class="">Book Technical Consultation</span></a>
-</div>
-<!-- Micro Badges -->
-<div class="flex flex-wrap items-center gap-6 text-xs theme-muted font-mono">
-<span class="inline-flex items-center gap-2"><span class="theme-accent font-bold">✓</span> 24/7 Mobile Fleet</span>
-<span class="inline-flex items-center gap-2"><span class="theme-accent font-bold">✓</span> 18 Showrooms Nationwide</span>
-<span class="inline-flex items-center gap-2"><span class="theme-accent font-bold">✓</span> OEM Guaranteed Genuine</span>
-</div>
-</div>
-<!-- Right Showcase Card -->
-<div class="lg:col-span-5 relative">
-<div class="absolute -inset-1.5 rounded-2xl bg-gradient-to-tr from-cyan-500/20 via-cyan-500/5 to-transparent blur-xl pointer-events-none opacity-70"></div>
-<div class="relative rounded-2xl overflow-hidden border theme-card p-3 shadow-2xl group">
-<div class="relative h-[380px] sm:h-[440px] w-full rounded-xl overflow-hidden">
-<img alt="Mikano High-Tech Manufacturing Plant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVsph00YWQNSdh9TpLhLzZjOcZKKQQJoKkR0QO74s3SWCEThhS6G-msOH9rBTTWa0S81-X1ucKliHmx3dWG4m_mbAjJS1-NtDzZpTF1U0cM9QVr3Ymb8QN0axotTWfxARIUnKsREhPmyD3qFsUnohedykbByle_zsnAprsPaXQ9rJOe8O-mUb9r1pX193QS2yE9-00Lg3WzyAucRjyNG3ItGj9VwKUHQgcardzTbpJo0MUrAjhgmSC">
-<div class="absolute inset-0 bg-black/50 theme-card-overlay"></div>
-<div class="absolute bottom-5 left-5 right-5 p-4 rounded-xl theme-card/95 backdrop-blur-md border theme-border">
-<div class="flex items-center justify-between mb-1.5">
-<span class="text-[11px] font-mono uppercase tracking-wider theme-accent font-medium">WAMCO Industrial Hub, Lagos</span>
-<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">OPERATIONAL</span>
-</div>
-<p class="text-xs theme-muted leading-relaxed">Precision robotic testing bench, dyno chambers, and certified automated lines.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- KEY STATS METRICS BAR (GENEROUS SPACING) -->
-<div class="mt-20 pt-12 border-t theme-border grid grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="space-y-1">
-<div class="text-[11px] uppercase tracking-widest font-mono theme-muted">Heavy Generation</div>
-<div class="font-display text-2xl sm:text-3xl font-bold theme-heading tracking-tight">9 kVA – 4,000 kVA</div>
-<p class="text-xs theme-muted">Continuous prime power capacity</p>
-</div>
-<div class="space-y-1">
-<div class="text-[11px] uppercase tracking-widest font-mono theme-muted">Automotive Standard</div>
-<div class="font-display text-2xl sm:text-3xl font-bold theme-heading tracking-tight">6-Yr / 200k km</div>
-<p class="text-xs theme-muted">Premier warranty on passenger fleets</p>
-</div>
-<div class="space-y-1">
-<div class="text-[11px] uppercase tracking-widest font-mono theme-muted">Switchboards</div>
-<div class="font-display text-2xl sm:text-3xl font-bold theme-heading tracking-tight">Form 1 to Form 4</div>
-<p class="text-xs theme-muted">Type-tested IEC certified switchgear</p>
-</div>
-<div class="space-y-1">
-<div class="text-[11px] uppercase tracking-widest font-mono theme-muted">Compliance</div>
-<div class="font-display text-2xl sm:text-3xl font-bold theme-heading tracking-tight">ISO 9001 &amp; 45001</div>
-<p class="text-xs theme-muted">Internationally validated standards</p>
-</div>
-</div>
-</div>
-</section>
-<!-- 01 / CORE DIVISIONS -->
-<section class="py-24 lg:py-36 border-b theme-border" id="divisions">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<!-- Section Super Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-<div>
-<span class="text-xs font-mono uppercase tracking-widest theme-accent block mb-3">01 / DIVISIONS</span>
-<h2 class="font-display text-3xl sm:text-4xl font-bold theme-heading tracking-tight">Integrated Conglomerate Architecture</h2>
-</div>
-<p class="text-sm sm:text-base theme-muted max-w-md font-normal leading-relaxed">
-            Operating five specialized industrial divisions delivering continuous grid stability, smart mobility, and high-voltage electrical engineering.
+            <!-- Pill CTAs -->
+            <div class="flex flex-wrap items-center gap-4 mb-8">
+              <a class="px-7 py-3.5 rounded-full theme-pill-btn font-semibold text-sm shadow-[0_0_25px_rgba(0,210,238,0.25)] hover:opacity-90 transition-all flex items-center gap-2"
+                href="#divisions">
+                <span class="">Explore Products</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+              <a class="px-7 py-3.5 rounded-full theme-card border theme-border theme-heading font-medium text-sm hover:opacity-90 transition-all flex items-center gap-2"
+                href="mailto:emmanueluko00@gmail.com"><span class="">Book Technical Consultation</span></a>
+            </div>
+            <!-- Micro Badges -->
+            <div class="flex flex-wrap items-center gap-6 text-xs theme-muted font-mono">
+              <span class="inline-flex items-center gap-2"><span class="theme-accent font-bold">✓</span> 24/7 Mobile
+                Fleet</span>
+              <span class="inline-flex items-center gap-2"><span class="theme-accent font-bold">✓</span> 18 Showrooms
+                Nationwide</span>
+              <span class="inline-flex items-center gap-2"><span class="theme-accent font-bold">✓</span> OEM Guaranteed
+                Genuine</span>
+            </div>
+          </div>
+          <!-- Right Showcase Card -->
+          <div class="lg:col-span-5 relative">
+            <div
+              class="absolute -inset-1.5 rounded-2xl bg-gradient-to-tr from-primary/20 via-primary/5 to-transparent blur-xl pointer-events-none opacity-60">
+            </div>
+            <div class="relative rounded-2xl overflow-hidden border theme-card p-3 shadow-2xl group">
+              <div class="relative h-[380px] sm:h-[440px] w-full rounded-xl overflow-hidden" id="hero-showcase">
+                <div class="hero-slide is-active absolute inset-0" data-hero-slide="0">
+                  <img alt="Mikano Motors MAXUS vehicles displayed outside the showroom"
+                    class="h-full w-full object-cover brightness-90" fetchpriority="high"
+                    src="./hero/automotive-maxus.jpg">
+                </div>
+                <div class="hero-slide absolute inset-0" data-hero-slide="1" aria-hidden="true">
+                  <img alt="Technicians assembling industrial generators at work"
+                    class="h-full w-full object-cover brightness-90" src="./hero/industry-assembly.jpg">
+                </div>
+                <div class="hero-slide absolute inset-0" data-hero-slide="2" aria-hidden="true">
+                  <img alt="Mikano transformer product display"
+                    class="h-full w-full object-cover brightness-90" src="./hero/transformer.jpg">
+                </div>
+                <div class="hero-slide absolute inset-0" data-hero-slide="3" aria-hidden="true">
+                  <img alt="MTU industrial generator set"
+                    class="h-full w-full object-cover brightness-90" src="./hero/generator-mtu.jpg">
+                </div>
+                <div class="absolute inset-0 bg-black/50 theme-card-overlay"></div>
+                <div
+                  class="absolute bottom-5 left-5 right-5 z-10 p-4 rounded-xl theme-card/95 backdrop-blur-md border theme-border">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[11px] font-mono uppercase tracking-wider theme-accent font-medium"
+                      id="hero-slide-title">Mikano Motors // MAXUS Lineup</span>
+                    <span
+                      class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">MIKANO INTERNATIONAL</span>
+                  </div>
+                  <p class="text-xs theme-muted leading-relaxed" id="hero-slide-caption">A closer look at the commercial
+                    vehicles in the Mikano Motors lineup.</p>
+                  <div aria-label="Hero image slides" class="mt-3 flex items-center gap-2" role="group">
+                    <button aria-label="Show automotive image" aria-pressed="true"
+                      class="hero-slide-control" data-hero-control="0" type="button"></button>
+                    <button aria-label="Show industry image" aria-pressed="false"
+                      class="hero-slide-control" data-hero-control="1" type="button"></button>
+                    <button aria-label="Show transformer image" aria-pressed="false"
+                      class="hero-slide-control" data-hero-control="2" type="button"></button>
+                    <button aria-label="Show generator image" aria-pressed="false"
+                      class="hero-slide-control" data-hero-control="3" type="button"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- KEY STATS METRICS BAR (GENEROUS SPACING) -->
+        <div class="mt-20 pt-12 border-t theme-border grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="space-y-1">
+            <div class="text-[11px] uppercase tracking-widest font-mono theme-muted">Heavy Generation</div>
+            <div class="font-display text-2xl sm:text-3xl font-bold theme-heading tracking-tight">9 kVA – 4,000 kVA
+            </div>
+            <p class="text-xs theme-muted">Continuous prime power capacity</p>
+          </div>
+          <div class="space-y-1">
+            <div class="text-[11px] uppercase tracking-widest font-mono theme-muted">Automotive Standard</div>
+            <div class="font-display text-2xl sm:text-3xl font-bold theme-heading tracking-tight">6-Yr / 200k km</div>
+            <p class="text-xs theme-muted">Premier warranty on passenger fleets</p>
+          </div>
+          <div class="space-y-1">
+            <div class="text-[11px] uppercase tracking-widest font-mono theme-muted">Switchboards</div>
+            <div class="font-display text-2xl sm:text-3xl font-bold theme-heading tracking-tight">Form 1 to Form 4</div>
+            <p class="text-xs theme-muted">Type-tested IEC certified switchgear</p>
+          </div>
+          <div class="space-y-1">
+            <div class="text-[11px] uppercase tracking-widest font-mono theme-muted">Compliance</div>
+            <div class="font-display text-2xl sm:text-3xl font-bold theme-heading tracking-tight">ISO 9001 &amp; 45001
+            </div>
+            <p class="text-xs theme-muted">Internationally validated standards</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 01 / CORE DIVISIONS -->
+    <section class="py-24 lg:py-36 border-b theme-border" id="divisions">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <!-- Section Super Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest theme-accent block mb-3">01 / DIVISIONS</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold theme-heading tracking-tight">Integrated Conglomerate
+              Architecture</h2>
+          </div>
+          <p class="text-sm sm:text-base theme-muted max-w-md font-normal leading-relaxed">
+            Operating five specialized industrial divisions delivering continuous grid stability, smart mobility, and
+            high-voltage electrical engineering.
           </p>
-</div>
-<!-- 4 Spacious Division Cards -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Card 1 -->
-<div class="p-8 rounded-2xl theme-card border hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-<div>
-<div class="w-12 h-12 rounded-xl theme-elevated border flex items-center justify-center theme-accent mb-8 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-2xl">directions_car</span>
-</div>
-<h3 class="font-display text-xl font-bold theme-heading mb-2">Mikano Motors</h3>
-<p class="text-xs theme-accent font-mono uppercase tracking-wider mb-4">EV &amp; Fuel Fleet</p>
-<p class="text-sm theme-muted leading-relaxed mb-6">
-                Changan, Deepal, Maxus, &amp; ZNA. High-end passenger SUVs and tough industrial commercial utility vehicles.
+        </div>
+        <!-- 4 Spacious Division Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="p-8 rounded-2xl theme-card border hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl theme-elevated border flex items-center justify-center theme-accent mb-8 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-2xl">directions_car</span>
+              </div>
+              <h3 class="font-display text-xl font-bold theme-heading mb-2">Mikano Motors</h3>
+              <p class="text-xs theme-accent font-mono uppercase tracking-wider mb-4">EV &amp; Fuel Fleet</p>
+              <p class="text-sm theme-muted leading-relaxed mb-6">
+                Changan, Deepal, Maxus, &amp; ZNA. High-end passenger SUVs and tough industrial commercial utility
+                vehicles.
               </p>
-</div>
-<div class="pt-6 border-t theme-border flex items-center justify-between">
-<span class="text-xs font-mono theme-muted">6-Yr Warranty</span>
-<a class="text-xs font-medium theme-accent flex items-center gap-1 group-hover:translate-x-1 transition-transform" href="#automotive">
+            </div>
+            <div class="pt-6 border-t theme-border flex items-center justify-between">
+              <span class="text-xs font-mono theme-muted">6-Yr Warranty</span>
+              <a class="text-xs font-medium theme-accent flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                href="#automotive">
                 Learn more <span class="">→</span>
-</a>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="p-8 rounded-2xl theme-card border hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-<div>
-<div class="w-12 h-12 rounded-xl theme-elevated border flex items-center justify-center theme-accent mb-8 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-2xl">bolt</span>
-</div>
-<h3 class="font-display text-xl font-bold theme-heading mb-2">Power Generation</h3>
-<p class="text-xs theme-accent font-mono uppercase tracking-wider mb-4">9kVA – 4,000kVA Sets</p>
-<p class="text-sm theme-muted leading-relaxed mb-6">
-                Continuous diesel and gas generator assemblies backed by MTU, Perkins, and YORC powertrains with 24/7 technical fleet.
+              </a>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="p-8 rounded-2xl theme-card border hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl theme-elevated border flex items-center justify-center theme-accent mb-8 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-2xl">bolt</span>
+              </div>
+              <h3 class="font-display text-xl font-bold theme-heading mb-2">Power Generation</h3>
+              <p class="text-xs theme-accent font-mono uppercase tracking-wider mb-4">9kVA – 4,000kVA Sets</p>
+              <p class="text-sm theme-muted leading-relaxed mb-6">
+                Continuous diesel and gas generator assemblies backed by MTU, Perkins, and YORC powertrains with 24/7
+                technical fleet.
               </p>
-</div>
-<div class="pt-6 border-t theme-border flex items-center justify-between">
-<span class="text-xs font-mono theme-muted">IPP Concessions</span>
-<a class="text-xs font-medium theme-accent flex items-center gap-1 group-hover:translate-x-1 transition-transform" href="#power-gen">
+            </div>
+            <div class="pt-6 border-t theme-border flex items-center justify-between">
+              <span class="text-xs font-mono theme-muted">IPP Concessions</span>
+              <a class="text-xs font-medium theme-accent flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                href="#power-gen">
                 Learn more <span class="">→</span>
-</a>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="p-8 rounded-2xl theme-card border hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-<div>
-<div class="w-12 h-12 rounded-xl theme-elevated border flex items-center justify-center theme-accent mb-8 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-2xl">lightbulb</span>
-</div>
-<h3 class="font-display text-xl font-bold theme-heading mb-2">Electrical &amp; Lighting</h3>
-<p class="text-xs theme-accent font-mono uppercase tracking-wider mb-4">Commercial Grid</p>
-<p class="text-sm theme-muted leading-relaxed mb-6">
-                Authorized distribution of certified MCBs, MCCBs, ACBs, distribution enclosures, and Signify Philips lighting installations.
+              </a>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="p-8 rounded-2xl theme-card border hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl theme-elevated border flex items-center justify-center theme-accent mb-8 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-2xl">lightbulb</span>
+              </div>
+              <h3 class="font-display text-xl font-bold theme-heading mb-2">Electrical &amp; Lighting</h3>
+              <p class="text-xs theme-accent font-mono uppercase tracking-wider mb-4">Commercial Grid</p>
+              <p class="text-sm theme-muted leading-relaxed mb-6">
+                Authorized distribution of certified MCBs, MCCBs, ACBs, distribution enclosures, and Signify Philips
+                lighting installations.
               </p>
-</div>
-<div class="pt-6 border-t theme-border flex items-center justify-between">
-<span class="text-xs font-mono theme-muted">IEC 60947</span>
-<a class="text-xs font-medium theme-accent flex items-center gap-1 group-hover:translate-x-1 transition-transform" href="#alliances">
+            </div>
+            <div class="pt-6 border-t theme-border flex items-center justify-between">
+              <span class="text-xs font-mono theme-muted">IEC 60947</span>
+              <a class="text-xs font-medium theme-accent flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                href="#alliances">
                 Learn more <span class="">→</span>
-</a>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="p-8 rounded-2xl theme-card border hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-<div>
-<div class="w-12 h-12 rounded-xl theme-elevated border flex items-center justify-center theme-accent mb-8 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-2xl">schema</span>
-</div>
-<h3 class="font-display text-xl font-bold theme-heading mb-2">Panel Solutions</h3>
-<p class="text-xs theme-accent font-mono uppercase tracking-wider mb-4">Custom Switchboards</p>
-<p class="text-sm theme-muted leading-relaxed mb-6">
-                Custom low voltage switchboards (LVSB), MV synchronizing setups, and licensed Siemens compact transformer substations.
+              </a>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="p-8 rounded-2xl theme-card border hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl theme-elevated border flex items-center justify-center theme-accent mb-8 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-2xl">schema</span>
+              </div>
+              <h3 class="font-display text-xl font-bold theme-heading mb-2">Panel Solutions</h3>
+              <p class="text-xs theme-accent font-mono uppercase tracking-wider mb-4">Custom Switchboards</p>
+              <p class="text-sm theme-muted leading-relaxed mb-6">
+                Custom low voltage switchboards (LVSB), MV synchronizing setups, and licensed Siemens compact
+                transformer substations.
               </p>
-</div>
-<div class="pt-6 border-t theme-border flex items-center justify-between">
-<span class="text-xs font-mono theme-muted">Form 1 to 4</span>
-<a class="text-xs font-medium theme-accent flex items-center gap-1 group-hover:translate-x-1 transition-transform" href="#quote-wizard">
+            </div>
+            <div class="pt-6 border-t theme-border flex items-center justify-between">
+              <span class="text-xs font-mono theme-muted">Form 1 to 4</span>
+              <a class="text-xs font-medium theme-accent flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                href="#quote-wizard">
                 Learn more <span class="">→</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 02 / AUTOMOTIVE FLEET INNOVATION -->
-<section class="py-24 lg:py-36 border-b theme-border" id="automotive">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<!-- Super Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-<div>
-<span class="text-xs font-mono uppercase tracking-widest theme-accent block mb-3">02 / AUTOMOTIVE FLEET</span>
-<h2 class="font-display text-3xl sm:text-4xl font-bold theme-heading tracking-tight">Future-Proof Mobility for Africa</h2>
-</div>
-<div class="flex items-center gap-2 p-1 rounded-full theme-elevated border theme-border self-start md:self-auto">
-<span class="px-4 py-1.5 rounded-full theme-pill-btn text-xs font-semibold">Flagship Lineup</span>
-<span class="px-4 py-1.5 text-xs theme-muted hover:theme-heading transition-colors cursor-pointer">EV &amp; REEV</span>
-<span class="px-4 py-1.5 text-xs theme-muted hover:theme-heading transition-colors cursor-pointer">Commercial</span>
-</div>
-</div>
-<!-- Bento Grid Showcase -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-<!-- Featured Large Card: Changan UNI-K -->
-<div class="lg:col-span-7 rounded-2xl theme-card border overflow-hidden flex flex-col justify-between group">
-<div class="relative h-80 sm:h-96 w-full overflow-hidden">
-<img alt="Changan UNI-K Luxury SUV" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQnHdoEjv5ttoFgUYMsUg-eZgWkquz_iwEyGtx2a4nCbMQzUsrvHahSiSXTeW7UsoLiUXOtuxpumySxOEKZpx3tjc506oSaEqH5lABv6O7QqQedE6KymQdA91cBbcQr1DeCr6HQmOrh9i3EqZX4jQIkafo0vPUeN97-y_ubUUKpvi7lz2NvOmu5mFNfsG3dQlscqSawwJe1gKGWUv3iSdgzP0uyZQ52rgQ0WDa_-A9zakUrU0_Agth">
-<div class="absolute inset-0 bg-black/40"></div>
-<div class="absolute top-6 left-6 flex items-center gap-2">
-<span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[11px] font-mono text-cyan-400 uppercase">Flagship SUV</span>
-<span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[11px] font-mono text-white uppercase">2.0L Turbo 4WD</span>
-</div>
-</div>
-<div class="p-8">
-<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-<div>
-<h3 class="font-display text-2xl font-bold theme-heading">Changan UNI-K</h3>
-<p class="text-xs font-mono theme-muted uppercase tracking-wider mt-1">Aisin 8-Speed // 233 HP // Quad Screens</p>
-</div>
-<div class="text-left sm:text-right">
-<div class="text-xs font-mono theme-muted">Nationwide Warranty</div>
-<div class="text-base font-bold theme-accent font-mono">6 Yrs / 200,000 km</div>
-</div>
-</div>
-<p class="text-sm theme-muted leading-relaxed mb-6">
-                Flagship executive crossover engineered with active noise cancellation, level-2 autonomous cruise features, and Sony panoramic soundstage.
-              </p>
-<div class="flex items-center gap-4">
-<a class="px-5 py-2.5 rounded-full bg-slate-900 text-white dark:bg-white dark:text-black font-semibold text-xs tracking-wide uppercase hover:opacity-90 transition-colors" href="#quote-wizard">
-                  Book Test Drive
-                </a>
-<span class="text-xs font-mono theme-muted">Financing via UBA available</span>
-</div>
-</div>
-</div>
-<!-- Deepal Electric EV Card -->
-<div class="lg:col-span-5 rounded-2xl theme-card border overflow-hidden flex flex-col justify-between group">
-<div class="relative h-80 sm:h-96 w-full overflow-hidden">
-<img alt="Deepal S07 Electric Vehicle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJEiwydlpDgdT1Rv4n_Szk9plmGRCCT8GNwG6-h7Hmi3Z0GONndYqZMwPk6yjqYIcYD1gaTkagUlW1ZEiBto9Zf6J9VoOkXJEKejXjM-5nupV53u22DVf9boxYko9zcspLfUF7iK9HjIrgjPmbxlZIcxwJTeIZvX6WYBfMfiuJWNt_-xzJ0s7HQJGN4DIiqRYONcQ_EOjmXO3Ai9EYR4hsgu1AuM7EG3jYGvnbJ_4-uxBuhtZ0hlL6">
-<div class="absolute inset-0 bg-black/40"></div>
-<div class="absolute top-6 left-6">
-<span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-cyan-500/30 text-[11px] font-mono text-cyan-400 uppercase">Pure EV &amp; REEV</span>
-</div>
-</div>
-<div class="p-8">
-<div class="flex items-center justify-between mb-4">
-<h3 class="font-display text-2xl font-bold theme-heading">Deepal S07 / L07</h3>
-<span class="text-xs font-mono theme-accent">620 km CLTC Range</span>
-</div>
-<p class="text-sm theme-muted leading-relaxed mb-6">
-                Aerodynamic New Energy crossover designed for urban and regional electric transit with DC supercharging capability.
-              </p>
-<div class="pt-4 border-t theme-border flex items-center justify-between">
-<span class="text-xs font-mono theme-muted">0-100 km/h in 6.7s</span>
-<a class="text-xs font-mono theme-accent hover:underline" href="#quote-wizard">Request EV Specs →</a>
-</div>
-</div>
-</div>
-</div>
-<!-- Row of 3 Fleet Cards -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Changan UNI-T -->
-<div class="rounded-2xl theme-card border p-6 flex flex-col justify-between group hover:border-cyan-500/30 transition-all">
-<div>
-<div class="relative h-44 w-full rounded-xl overflow-hidden mb-5">
-<img alt="Changan UNI-T" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAboPFuWIE2wl9nl3YwErrI-7Waai_pdZfpyPkW_XtLdDGJINThNHUyWqZdy3KT2q4v2R7tKVpOjLl5oto9veXTQi_xxnqg6MxoxmeKl0hHFq4QzpBsW9Hq2y_rs1SlXrNRrpgLWlR6Ou2busc-j7_T986CbpFNXx7yHWAjv98hICwKT23uf-li3Y8shMK860lRChoXXA_1y_1nnRxWJOGHmYNrmd48EPYoTXO28FJZm7TYqP5FlqcX">
-</div>
-<h4 class="font-display text-lg font-bold theme-heading mb-1">Changan UNI-T</h4>
-<p class="text-xs theme-muted leading-relaxed">Aggressive sport crossover with 1.5L Turbo and automated driving assistance.</p>
-</div>
-<div class="pt-4 mt-6 border-t theme-border flex justify-between items-center text-xs font-mono">
-<span class="theme-muted">Sport Crossover</span>
-<a class="theme-accent hover:underline" href="#quote-wizard">View Spec →</a>
-</div>
-</div>
-<!-- Changan CS95 -->
-<div class="rounded-2xl theme-card border p-6 flex flex-col justify-between group hover:border-cyan-500/30 transition-all">
-<div>
-<div class="relative h-44 w-full rounded-xl overflow-hidden mb-5">
-<img alt="Changan CS95" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIBZmhqprhdAysCwSBfgX1GKc3cuRv7OmVE_mul5_XcLEZhEVcLNZBLx6vyQ2Mp6xlzFLtcybDJGNesIKV1WuJ3C51YiwthSIGxKM4zBCSR6Ky9VLA48pJ5AXRj1JTyODBjFr8EwAXw3MgLs6VveVyGWP8KCTzQ1ztY8Cc697EzpGUrHEQ4Ps-dxTwj5Dvvzd4f67RhosuMDWFGPDX93Z1t0w5SSopzN-bvSI2Yhw59e7026KkuSv5">
-</div>
-<h4 class="font-display text-lg font-bold theme-heading mb-1">Changan CS95</h4>
-<p class="text-xs theme-muted leading-relaxed">Executive 7-seater full-size SUV featuring BorgWarner intelligent AWD.</p>
-</div>
-<div class="pt-4 mt-6 border-t theme-border flex justify-between items-center text-xs font-mono">
-<span class="theme-muted">Corporate Fleet</span>
-<a class="theme-accent hover:underline" href="#quote-wizard">View Spec →</a>
-</div>
-</div>
-<!-- ZNA Rich 6 -->
-<div class="rounded-2xl theme-card border p-6 flex flex-col justify-between group hover:border-cyan-500/30 transition-all">
-<div>
-<div class="relative h-44 w-full rounded-xl overflow-hidden mb-5">
-<img alt="ZNA Rich 6 Double Cabin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1l1VnOrc6lzhmIVAcwug18u3C31tDvsRxAJbDUliwFfXZJRDx7dQeD2EWFI3zxxvfidqcl9VDCqaHxG_55B1tTMnypPAucK9YVsLzlKc0NkxzUfwaOaCyqsPaJa_hkxw9LVHakq6xPWrGKi95ngN4GtiitK-hm-C753426C6wn1-UYcFqGe0Ut9Oacc1vbNwZFgJT1s4cXzZrOVd_WQod-jHgzvk2xYSsIrqt6eMcbuSCHGqvMRbG">
-</div>
-<h4 class="font-display text-lg font-bold theme-heading mb-1">ZNA Rich 6 Pickup</h4>
-<p class="text-xs theme-muted leading-relaxed">Rugged double-cabin utility pickup built for harsh industrial operations.</p>
-</div>
-<div class="pt-4 mt-6 border-t theme-border flex justify-between items-center text-xs font-mono">
-<span class="theme-muted">Industrial Grade</span>
-<a class="theme-accent hover:underline" href="#quote-wizard">View Spec →</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 03 / AFRICA'S POWER LEADER -->
-<section class="py-24 lg:py-36 border-b theme-border" id="power-gen">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<!-- Super Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-<div>
-<span class="text-xs font-mono uppercase tracking-widest theme-accent block mb-3">03 / POWER GENERATION</span>
-<h2 class="font-display text-3xl sm:text-4xl font-bold theme-heading tracking-tight">Africa's Largest Generator Assembly</h2>
-</div>
-<p class="text-sm sm:text-base theme-muted max-w-md font-normal leading-relaxed">
-            Over three continuous decades powering industrial complexes, hyperscale data centers, and critical telecommunication backbones across Sub-Saharan Africa.
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 02 / AUTOMOTIVE FLEET INNOVATION -->
+    <section class="py-24 lg:py-36 border-b theme-border" id="automotive">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <!-- Super Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest theme-accent block mb-3">02 / AUTOMOTIVE
+              FLEET</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold theme-heading tracking-tight">Future-Proof Mobility
+              for Africa</h2>
+          </div>
+          <div aria-label="Filter vehicles by brand" class="flex flex-wrap gap-2" role="group">
+            <button aria-pressed="true"
+              class="vehicle-filter is-active rounded-full theme-pill-btn px-4 py-2 text-xs font-semibold transition-all"
+              data-vehicle-filter="all" type="button">All vehicles</button>
+            <button aria-pressed="false"
+              class="vehicle-filter rounded-full theme-elevated border theme-border px-4 py-2 text-xs font-semibold theme-muted transition-all hover:text-primary"
+              data-vehicle-filter="changan" type="button">Changan</button>
+            <button aria-pressed="false"
+              class="vehicle-filter rounded-full theme-elevated border theme-border px-4 py-2 text-xs font-semibold theme-muted transition-all hover:text-primary"
+              data-vehicle-filter="deepal" type="button">Deepal</button>
+            <button aria-pressed="false"
+              class="vehicle-filter rounded-full theme-elevated border theme-border px-4 py-2 text-xs font-semibold theme-muted transition-all hover:text-primary"
+              data-vehicle-filter="maxus" type="button">MAXUS</button>
+            <button aria-pressed="false"
+              class="vehicle-filter rounded-full theme-elevated border theme-border px-4 py-2 text-xs font-semibold theme-muted transition-all hover:text-primary"
+              data-vehicle-filter="zna" type="button">ZNA</button>
+          </div>
+        </div>
+        <p class="mb-3 text-xs theme-muted" id="vehicle-count" aria-live="polite">Showing all vehicles</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8" id="vehicle-grid"></div>
+        <p class="mb-12 max-w-4xl text-xs theme-muted leading-relaxed">
+          Prices shown in naira millions, excluding VAT, from the supplied 2026 price lists: Changan (August), Deepal
+          (April), and MAXUS (June). Changan and Deepal lists state that prices are valid for 24 hours only. Confirm
+          current pricing and availability with the dealer. ZNA pricing was not included in the supplied lists.
+        </p>
+      </div>
+    </section>
+    <!-- 03 / AFRICA'S POWER LEADER -->
+    <section class="py-24 lg:py-36 border-b theme-border" id="power-gen">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <!-- Super Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest theme-accent block mb-3">03 / POWER
+              GENERATION</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold theme-heading tracking-tight">Africa's Largest
+              Generator Assembly</h2>
+          </div>
+          <p class="text-sm sm:text-base theme-muted max-w-md font-normal leading-relaxed">
+            Over three continuous decades powering industrial complexes, hyperscale data centers, and critical
+            telecommunication backbones across Sub-Saharan Africa.
           </p>
-</div>
-<!-- 3 Generous Power Cards (MTU, Perkins, YORC) -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-<!-- MTU Card -->
-<div class="rounded-2xl theme-card border overflow-hidden flex flex-col justify-between group hover:border-cyan-500/40 transition-all">
-<div class="relative h-60 w-full overflow-hidden">
-<img alt="MTU Rolls-Royce Generator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDERz_d2T5n1vokNQyV9RhBabXW8sd08U4NKvR8-3taNHCKJv-TnSPMfB9utT7FgXVxKj4ttEiWJVdNsjnnz4I7sWaeBsE1vmbKVrEqWiT97KWCPqOCFsDFPsul44cSheyyIxb3GZ7sCjZ_F37bFuULx5lmVrmRkwkx32ssizMp7JMVr23gzhTIyVrZGdAr4InXE8GxsTb8UgFb0cxwTFf5Ih73b-BmBaWZstfRhF-0xB7WwtF7_4iN">
-<div class="absolute inset-0 bg-black/40"></div>
-<div class="absolute top-4 left-4">
-<span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[11px] font-mono text-cyan-400">1,000 – 4,000 kVA</span>
-</div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-xl font-bold theme-heading mb-2">MTU Solutions</h3>
-<p class="text-xs font-mono theme-muted uppercase mb-4">Rolls-Royce Power Systems</p>
-<p class="text-sm theme-muted leading-relaxed mb-6">
-                Engineered for continuous mission-critical duty in tier-4 data centers, medical clusters, and independent power projects.
+        </div>
+        <!-- 3 Generous Power Cards (MTU, Perkins, YORC) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <!-- MTU Card -->
+          <div
+            class="rounded-2xl theme-card border overflow-hidden flex flex-col justify-between group hover:border-cyan-500/40 transition-all">
+            <div class="relative h-60 w-full overflow-hidden">
+              <img alt="MTU Rolls-Royce Generator"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="./generators/mtu-gen.jpg">
+              <div class="absolute inset-0 bg-black/40"></div>
+              <div class="absolute top-4 left-4">
+                <span
+                  class="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[11px] font-mono text-cyan-400">1,000
+                  – 4,000 kVA</span>
+              </div>
+            </div>
+            <div class="p-8">
+              <h3 class="font-display text-xl font-bold theme-heading mb-2">MTU Solutions</h3>
+              <p class="text-xs font-mono theme-muted uppercase mb-4">Rolls-Royce Power Systems</p>
+              <p class="text-sm theme-muted leading-relaxed mb-6">
+                Engineered for continuous mission-critical duty in tier-4 data centers, medical clusters, and
+                independent power projects.
               </p>
-<div class="pt-4 border-t theme-border flex items-center justify-between text-xs font-mono">
-<span class="theme-muted">50 Hz / 415 V</span>
-<span class="theme-accent font-medium">Continuous Prime</span>
-</div>
-</div>
-</div>
-<!-- Perkins Card -->
-<div class="rounded-2xl theme-card border overflow-hidden flex flex-col justify-between group hover:border-cyan-500/40 transition-all">
-<div class="relative h-60 w-full overflow-hidden">
-<img alt="Perkins Industrial Generator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5fnyKlN14i26EpIlbTlALCBBOwAbHT7ZGwSIUawFYimX21RNELhGeYJshAhpALwxNGEdXcy3SfE8QayNKqY3m1mgTXl8KAqgkA16s-IRdXvmLJhYB-kM72yMNwHv_91pmC20jAT2jELmZLIWspTjxrVoQhG9rUMYSQa1qwrxDvtTuGbNtE6oRAcrHnW6cxc0phUWzyzux-F6eQvbfbNsVSc0BUJB0QuUrnryGFEHeYKNWf0bLFsSU">
-<div class="absolute inset-0 bg-black/40"></div>
-<div class="absolute top-4 left-4">
-<span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[11px] font-mono text-cyan-400">9 – 2,500 kVA</span>
-</div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-xl font-bold theme-heading mb-2">Perkins Powered Series</h3>
-<p class="text-xs font-mono theme-muted uppercase mb-4">Perkins UK Platform</p>
-<p class="text-sm theme-muted leading-relaxed mb-6">
-                Sub-Saharan Africa’s gold standard for low maintenance overheads, high thermal efficiency, and immediate parts access.
+              <div class="pt-4 border-t theme-border flex items-center justify-between text-xs font-mono">
+                <span class="theme-muted">50 Hz / 415 V</span>
+                <span class="theme-accent font-medium">Continuous Prime</span>
+              </div>
+            </div>
+          </div>
+          <!-- Perkins Card -->
+          <div
+            class="rounded-2xl theme-card border overflow-hidden flex flex-col justify-between group hover:border-cyan-500/40 transition-all">
+            <div class="relative h-60 w-full overflow-hidden">
+              <img alt="Perkins Industrial Generator"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="./generators/perkins-gen.jpg">
+              <div class="absolute inset-0 bg-black/40"></div>
+              <div class="absolute top-4 left-4">
+                <span
+                  class="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[11px] font-mono text-cyan-400">9
+                  – 2,500 kVA</span>
+              </div>
+            </div>
+            <div class="p-8">
+              <h3 class="font-display text-xl font-bold theme-heading mb-2">Perkins Powered Series</h3>
+              <p class="text-xs font-mono theme-muted uppercase mb-4">Perkins UK Platform</p>
+              <p class="text-sm theme-muted leading-relaxed mb-6">
+                Sub-Saharan Africa’s gold standard for low maintenance overheads, high thermal efficiency, and immediate
+                parts access.
               </p>
-<div class="pt-4 border-t theme-border flex items-center justify-between text-xs font-mono">
-<span class="theme-muted">DSE Controllers</span>
-<span class="theme-accent font-medium">OEM Soundproof</span>
-</div>
-</div>
-</div>
-<!-- YORC Card -->
-<div class="rounded-2xl theme-card border overflow-hidden flex flex-col justify-between group hover:border-cyan-500/40 transition-all">
-<div class="relative h-60 w-full overflow-hidden">
-<img alt="YORC Continuous Power Generator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKEx7pJMXAq_IVGaXnpKPtmKvVEkp1uUoLX-4r-kwPhUckX5DfIRe4oaWC-GpNxTTZe56pfqZqgxeVT6eBWRK8bdurNBCuuROHrUUVyv7dXkohvJMwKo9TUQynWfUoUDZJnroMLU3oLguVT6B7emmRYdzHXPCcSYX_TvgaAYLUa4lHYG4OC-83f5k4naYTk-PJR805N8caYeTQOaaq2ABL6ncOBUOtUjsJCNFGB5lWykVsTybThMC">
-<div class="absolute inset-0 bg-black/40"></div>
-<div class="absolute top-4 left-4">
-<span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[11px] font-mono text-cyan-400">15 – 1,000 kVA</span>
-</div>
-</div>
-<div class="p-8">
-<h3 class="font-display text-xl font-bold theme-heading mb-2">YORC Generating Systems</h3>
-<p class="text-xs font-mono theme-muted uppercase mb-4">Tropicalized Industrial</p>
-<p class="text-sm theme-muted leading-relaxed mb-6">
-                Cost-efficient workhorses specifically built to withstand high African ambient humidity and continuous duty conditions.
+              <div class="pt-4 border-t theme-border flex items-center justify-between text-xs font-mono">
+                <span class="theme-muted">DSE Controllers</span>
+                <span class="theme-accent font-medium">OEM Soundproof</span>
+              </div>
+            </div>
+          </div>
+          <!-- YORC Card -->
+          <div
+            class="rounded-2xl theme-card border overflow-hidden flex flex-col justify-between group hover:border-cyan-500/40 transition-all">
+            <div class="relative h-60 w-full overflow-hidden">
+              <img alt="YORC Continuous Power Generator"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="./generators/yorc-gen.jpg">
+              <div class="absolute inset-0 bg-black/40"></div>
+              <div class="absolute top-4 left-4">
+                <span
+                  class="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[11px] font-mono text-cyan-400">15
+                  – 1,000 kVA</span>
+              </div>
+            </div>
+            <div class="p-8">
+              <h3 class="font-display text-xl font-bold theme-heading mb-2">YORC Generating Systems</h3>
+              <p class="text-xs font-mono theme-muted uppercase mb-4">Tropicalized Industrial</p>
+              <p class="text-sm theme-muted leading-relaxed mb-6">
+                Cost-efficient workhorses specifically built to withstand high African ambient humidity and continuous
+                duty conditions.
               </p>
-<div class="pt-4 border-t theme-border flex items-center justify-between text-xs font-mono">
-<span class="theme-muted">IP23 Alternators</span>
-<span class="theme-accent font-medium">Heavy Duty Canopy</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Emergency Fleet & IPP Highlight Box -->
-<div class="p-8 lg:p-12 rounded-2xl theme-card border flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-<div class="max-w-2xl">
-<div class="inline-flex items-center gap-2 text-xs font-mono theme-accent uppercase mb-2">
-<span class="material-symbols-outlined text-base">emergency</span>
-<span class="">24/7 Redundant Rental Fleet &amp; IPP Concessions</span>
-</div>
-<h4 class="font-display text-xl sm:text-2xl font-bold theme-heading mb-3">Need 50kVA or 10MW Dispatched Rapidly?</h4>
-<p class="text-sm theme-muted leading-relaxed">
-              Our 1,200+ unit soundproof rental fleet arrives with dedicated on-site mechanical engineers, fuel monitoring, and synchronized transfer switchgear across Lagos, Abuja, and Port Harcourt within hours.
+              <div class="pt-4 border-t theme-border flex items-center justify-between text-xs font-mono">
+                <span class="theme-muted">IP23 Alternators</span>
+                <span class="theme-accent font-medium">Heavy Duty Canopy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Emergency Fleet & IPP Highlight Box -->
+        <div
+          class="p-8 lg:p-12 rounded-2xl theme-card border flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 text-xs font-mono theme-accent uppercase mb-2">
+              <span class="material-symbols-outlined text-base">emergency</span>
+              <span class="">24/7 Redundant Rental Fleet &amp; IPP Concessions</span>
+            </div>
+            <h4 class="font-display text-xl sm:text-2xl font-bold theme-heading mb-3">Need 50kVA or 10MW Dispatched
+              Rapidly?</h4>
+            <p class="text-sm theme-muted leading-relaxed">
+              Our 1,200+ unit soundproof rental fleet arrives with dedicated on-site mechanical engineers, fuel
+              monitoring, and synchronized transfer switchgear across Lagos, Abuja, and Port Harcourt within hours.
             </p>
-</div>
-<div class="flex flex-wrap items-center gap-4 flex-shrink-0">
-<a class="px-6 py-3 rounded-full theme-pill-btn font-semibold text-xs tracking-wider uppercase hover:opacity-90 transition-colors flex items-center gap-2" href="https://wa.me/2348026250869" target="_blank"><span class="material-symbols-outlined text-[16px]">call</span><span class="">WhatsApp: 08026250869</span></a>
-<a class="px-6 py-3 rounded-full theme-elevated border theme-border theme-heading font-medium text-xs tracking-wider uppercase hover:opacity-80 transition-colors" href="mailto:emmanueluko00@gmail.com">Request Rental Proposal</a>
-</div>
-</div>
-</div>
-</section>
-<!-- 04 / STRATEGIC OEM ALLIANCES -->
-<section class="py-24 lg:py-36 border-b theme-border" id="alliances">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<!-- Super Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-<div>
-<span class="text-xs font-mono uppercase tracking-widest theme-accent block mb-3">04 / STRATEGIC OEM PARTNERSHIPS</span>
-<h2 class="font-display text-3xl sm:text-4xl font-bold theme-heading tracking-tight">World-Class Electrical Infrastructure</h2>
-</div>
-<p class="text-sm sm:text-base theme-muted max-w-md font-normal leading-relaxed">
-            Authorized distributor and licensed solution architect for world-renowned electrical transmission and power protection manufacturers.
+          </div>
+          <div class="flex flex-wrap items-center gap-4 flex-shrink-0">
+            <a class="px-6 py-3 rounded-full bg-slate-900 text-white hover:bg-slate-800 font-semibold text-xs tracking-wider uppercase hover:opacity-95 transition-all flex items-center gap-2 shadow-sm"
+              href="tel:+2348026250869"><span
+                class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span
+                class="material-symbols-outlined text-[16px]">call</span><span class="">Call Dealer</span></a>
+            <a class="px-6 py-3 rounded-full theme-elevated border theme-border theme-heading font-medium text-xs tracking-wider uppercase hover:opacity-80 transition-colors"
+              href="mailto:emmanueluko00@gmail.com">Request Rental Proposal</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 04 / STRATEGIC OEM ALLIANCES -->
+    <section class="py-24 lg:py-36 border-b theme-border" id="alliances">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <!-- Super Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest theme-accent block mb-3">04 / STRATEGIC OEM
+              PARTNERSHIPS</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold theme-heading tracking-tight">World-Class Electrical
+              Infrastructure</h2>
+          </div>
+          <p class="text-sm sm:text-base theme-muted max-w-md font-normal leading-relaxed">
+            Authorized distributor and licensed solution architect for world-renowned electrical transmission and power
+            protection manufacturers.
           </p>
-</div>
-<!-- 2 Spacious Feature Showcases -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-<!-- Schneider Electric -->
-<div class="p-8 sm:p-10 rounded-2xl theme-card border hover:border-cyan-500/40 transition-all flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between mb-8">
-<span class="px-3.5 py-1 rounded-full theme-elevated border theme-border text-xs font-mono theme-accent uppercase">Official Partner</span>
-<span class="font-display font-bold text-lg theme-heading tracking-wider">SCHNEIDER ELECTRIC</span>
-</div>
-<h3 class="font-display text-2xl font-bold theme-heading mb-4">Certified Substation &amp; Breaker Solutions</h3>
-<p class="text-sm theme-muted leading-relaxed mb-8">
-                Supply, integration, and warranty center for Schneider's premium low and medium voltage grid equipment across Nigeria.
+        </div>
+        <!-- 2 Spacious Feature Showcases -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          <!-- Schneider Electric -->
+          <div
+            class="p-8 sm:p-10 rounded-2xl theme-card border hover:border-cyan-500/40 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span
+                  class="px-3.5 py-1 rounded-full theme-elevated border theme-border text-xs font-mono theme-accent uppercase">Official
+                  Partner</span>
+                <span class="font-display font-bold text-lg theme-heading tracking-wider">SCHNEIDER ELECTRIC</span>
+              </div>
+              <h3 class="font-display text-2xl font-bold theme-heading mb-4">Certified Substation &amp; Breaker
+                Solutions</h3>
+              <p class="text-sm theme-muted leading-relaxed mb-8">
+                Supply, integration, and warranty center for Schneider's premium low and medium voltage grid equipment
+                across Nigeria.
               </p>
-<!-- Specs Grid -->
-<div class="grid grid-cols-2 gap-4 mb-8">
-<div class="p-4 rounded-xl theme-inner-box border">
-<div class="theme-heading font-medium text-sm mb-1">Transformers</div>
-<div class="text-xs theme-muted">50 kVA – 2,500 kVA 33kV/415V</div>
-</div>
-<div class="p-4 rounded-xl theme-inner-box border">
-<div class="theme-heading font-medium text-sm mb-1">Ring Main Units</div>
-<div class="text-xs theme-muted">SF6 insulated RMU stations</div>
-</div>
-<div class="p-4 rounded-xl theme-inner-box border">
-<div class="theme-heading font-medium text-sm mb-1">Masterpact ACB</div>
-<div class="text-xs theme-muted">High-reliability circuit breakers</div>
-</div>
-<div class="p-4 rounded-xl theme-inner-box border">
-<div class="theme-heading font-medium text-sm mb-1">Altivar VSDs</div>
-<div class="text-xs theme-muted">Variable speed motor drives</div>
-</div>
-</div>
-</div>
-<div class="pt-6 border-t theme-border flex items-center justify-between">
-<span class="text-xs font-mono theme-muted">Includes Calibration Certificate</span>
-<a class="text-xs font-mono theme-accent hover:underline" href="#quote-wizard">Inquire Schneider Tech →</a>
-</div>
-</div>
-<!-- TE Connectivity Raychem -->
-<div class="p-8 sm:p-10 rounded-2xl theme-card border hover:border-cyan-500/40 transition-all flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between mb-8">
-<span class="px-3.5 py-1 rounded-full theme-elevated border theme-border text-xs font-mono theme-accent uppercase">Authorized Distributor</span>
-<span class="font-display font-bold text-lg theme-heading tracking-wider">TE RAYCHEM</span>
-</div>
-<h3 class="font-display text-2xl font-bold theme-heading mb-4">High-Stress Cable Insulation &amp; Accessories</h3>
-<p class="text-sm theme-muted leading-relaxed mb-8">
-                Engineered to resist the severe humidity, thermal variations, and environmental stresses of African power distribution lines.
+              <!-- Specs Grid -->
+              <div class="grid grid-cols-2 gap-4 mb-8">
+                <div class="p-4 rounded-xl theme-inner-box border">
+                  <div class="theme-heading font-medium text-sm mb-1">Transformers</div>
+                  <div class="text-xs theme-muted">50 kVA – 2,500 kVA 33kV/415V</div>
+                </div>
+                <div class="p-4 rounded-xl theme-inner-box border">
+                  <div class="theme-heading font-medium text-sm mb-1">Ring Main Units</div>
+                  <div class="text-xs theme-muted">SF6 insulated RMU stations</div>
+                </div>
+                <div class="p-4 rounded-xl theme-inner-box border">
+                  <div class="theme-heading font-medium text-sm mb-1">Masterpact ACB</div>
+                  <div class="text-xs theme-muted">High-reliability circuit breakers</div>
+                </div>
+                <div class="p-4 rounded-xl theme-inner-box border">
+                  <div class="theme-heading font-medium text-sm mb-1">Altivar VSDs</div>
+                  <div class="text-xs theme-muted">Variable speed motor drives</div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-6 border-t theme-border flex items-center justify-between">
+              <span class="text-xs font-mono theme-muted">Includes Calibration Certificate</span>
+              <a class="text-xs font-mono theme-accent hover:underline" href="#quote-wizard">Inquire Schneider Tech
+                →</a>
+            </div>
+          </div>
+          <!-- TE Connectivity Raychem -->
+          <div
+            class="p-8 sm:p-10 rounded-2xl theme-card border hover:border-cyan-500/40 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span
+                  class="px-3.5 py-1 rounded-full theme-elevated border theme-border text-xs font-mono theme-accent uppercase">Authorized
+                  Distributor</span>
+                <span class="font-display font-bold text-lg theme-heading tracking-wider">TE RAYCHEM</span>
+              </div>
+              <h3 class="font-display text-2xl font-bold theme-heading mb-4">High-Stress Cable Insulation &amp;
+                Accessories</h3>
+              <p class="text-sm theme-muted leading-relaxed mb-8">
+                Engineered to resist the severe humidity, thermal variations, and environmental stresses of African
+                power distribution lines.
               </p>
-<!-- Specs Grid -->
-<div class="grid grid-cols-2 gap-4 mb-8">
-<div class="p-4 rounded-xl theme-inner-box border">
-<div class="theme-heading font-medium text-sm mb-1">Heat-Shrink</div>
-<div class="text-xs theme-muted">LV, MV (11kV/33kV), &amp; HV Kits</div>
-</div>
-<div class="p-4 rounded-xl theme-inner-box border">
-<div class="theme-heading font-medium text-sm mb-1">Through-Joints</div>
-<div class="text-xs theme-muted">Hermetic resin moisture seals</div>
-</div>
-<div class="p-4 rounded-xl theme-inner-box border">
-<div class="theme-heading font-medium text-sm mb-1">GIS Connectors</div>
-<div class="text-xs theme-muted">Screened separable terminations</div>
-</div>
-<div class="p-4 rounded-xl theme-inner-box border">
-<div class="theme-heading font-medium text-sm mb-1">Insulators</div>
-<div class="text-xs theme-muted">Substation busbar creepage protection</div>
-</div>
-</div>
-</div>
-<div class="pt-6 border-t theme-border flex items-center justify-between">
-<span class="text-xs font-mono theme-muted">Guaranteed Genuine Raychem Seals</span>
-<a class="text-xs font-mono theme-accent hover:underline" href="#quote-wizard">Inquire Raychem Tech →</a>
-</div>
-</div>
-</div>
-<!-- Clean OEM Logo Strip -->
-<div class="p-8 rounded-2xl theme-card border">
-<div class="text-center text-xs font-mono uppercase tracking-widest theme-muted mb-8">
+              <!-- Specs Grid -->
+              <div class="grid grid-cols-2 gap-4 mb-8">
+                <div class="p-4 rounded-xl theme-inner-box border">
+                  <div class="theme-heading font-medium text-sm mb-1">Heat-Shrink</div>
+                  <div class="text-xs theme-muted">LV, MV (11kV/33kV), &amp; HV Kits</div>
+                </div>
+                <div class="p-4 rounded-xl theme-inner-box border">
+                  <div class="theme-heading font-medium text-sm mb-1">Through-Joints</div>
+                  <div class="text-xs theme-muted">Hermetic resin moisture seals</div>
+                </div>
+                <div class="p-4 rounded-xl theme-inner-box border">
+                  <div class="theme-heading font-medium text-sm mb-1">GIS Connectors</div>
+                  <div class="text-xs theme-muted">Screened separable terminations</div>
+                </div>
+                <div class="p-4 rounded-xl theme-inner-box border">
+                  <div class="theme-heading font-medium text-sm mb-1">Insulators</div>
+                  <div class="text-xs theme-muted">Substation busbar creepage protection</div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-6 border-t theme-border flex items-center justify-between">
+              <span class="text-xs font-mono theme-muted">Guaranteed Genuine Raychem Seals</span>
+              <a class="text-xs font-mono theme-accent hover:underline" href="#quote-wizard">Inquire Raychem Tech →</a>
+            </div>
+          </div>
+        </div>
+        <!-- Clean OEM Logo Strip -->
+        <div class="p-8 rounded-2xl theme-card border">
+          <div class="text-center text-xs font-mono uppercase tracking-widest theme-muted mb-8">
             Certified Licensors &amp; Component Partners
           </div>
-<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center text-center">
-<span class="font-display text-sm font-semibold tracking-wider theme-muted hover:theme-heading transition-colors">SCHNEIDER</span>
-<span class="font-display text-sm font-semibold tracking-wider theme-muted hover:theme-heading transition-colors">TE RAYCHEM</span>
-<span class="font-display text-sm font-semibold tracking-wider theme-muted hover:theme-heading transition-colors">PERKINS UK</span>
-<span class="font-display text-sm font-semibold tracking-wider theme-muted hover:theme-heading transition-colors">MTU ROLLS-ROYCE</span>
-<span class="font-display text-sm font-semibold tracking-wider theme-muted hover:theme-heading transition-colors">SIEMENS</span>
-<span class="font-display text-sm font-semibold tracking-wider theme-muted hover:theme-heading transition-colors">CHANGAN AUTO</span>
-</div>
-</div>
-</div>
-</section>
-<!-- 05 / SPECIFICATION & RFP WIZARD -->
-<section class="py-24 lg:py-36 border-b theme-border" id="quote-wizard">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-<!-- Left Column -->
-<div class="lg:col-span-5">
-<span class="text-xs font-mono uppercase tracking-widest theme-accent block mb-3">05 / SPECIFICATION &amp; RFP WIZARD</span>
-<h2 class="font-display text-3xl sm:text-4xl font-bold theme-heading tracking-tight mb-6">Direct Engineering Procurement</h2>
-<p class="text-sm sm:text-base theme-muted leading-relaxed mb-8">
-              Configure your requirements across power generation, automotive fleet orders, custom switchgear, or authorized Schneider/Raychem accessories. Our senior industrial sales engineers respond within 2 business hours.
+          <div class="partner-marquee" role="region" aria-label="Certified licensors and component partners">
+            <div class="partner-marquee-track">
+              <div class="partner-marquee-group" role="list">
+                <div class="partner-marquee-item" role="listitem">
+                  <img src="./partners/schneider-electric.png" alt="Schneider Electric">
+                </div>
+                <div class="partner-marquee-item" role="listitem">
+                  <img src="./partners/te-raychem.png" alt="TE Connectivity Raychem">
+                </div>
+                <div class="partner-marquee-item" role="listitem">
+                  <img src="./partners/perkins.png" alt="Perkins">
+                </div>
+                <div class="partner-marquee-item" role="listitem">
+                  <img src="./partners/mtu-rolls-royce.jpg" alt="MTU, a Rolls-Royce solution">
+                </div>
+                <div class="partner-marquee-item font-display text-sm font-semibold tracking-wider theme-muted" role="listitem">
+                  SIEMENS
+                </div>
+                <div class="partner-marquee-item" role="listitem">
+                  <img src="./partners/changan.png" alt="Changan Auto">
+                </div>
+              </div>
+              <div class="partner-marquee-group" role="list" aria-hidden="true">
+                <div class="partner-marquee-item">
+                  <img src="./partners/schneider-electric.png" alt="">
+                </div>
+                <div class="partner-marquee-item">
+                  <img src="./partners/te-raychem.png" alt="">
+                </div>
+                <div class="partner-marquee-item">
+                  <img src="./partners/perkins.png" alt="">
+                </div>
+                <div class="partner-marquee-item">
+                  <img src="./partners/mtu-rolls-royce.jpg" alt="">
+                </div>
+                <div class="partner-marquee-item font-display text-sm font-semibold tracking-wider theme-muted">
+                  SIEMENS
+                </div>
+                <div class="partner-marquee-item">
+                  <img src="./partners/changan.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 05 / SPECIFICATION & RFP WIZARD -->
+    <section class="py-24 lg:py-36 border-b theme-border" id="quote-wizard">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <!-- Left Column -->
+          <div class="lg:col-span-5">
+            <span class="text-xs font-mono uppercase tracking-widest theme-accent block mb-3">05 / SPECIFICATION &amp;
+              RFP WIZARD</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold theme-heading tracking-tight mb-6">Direct Engineering
+              Procurement</h2>
+            <p class="text-sm sm:text-base theme-muted leading-relaxed mb-8">
+              Configure your requirements across power generation, automotive fleet orders, custom switchgear, or
+              authorized Schneider/Raychem accessories. Our senior industrial sales engineers respond within 2 business
+              hours.
             </p>
-<div class="p-6 rounded-2xl theme-card border space-y-4">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined theme-accent text-xl">mark_chat_unread</span>
-<span class="text-sm font-semibold theme-heading">Government &amp; Large Commercial Tenders</span>
-</div>
-<p class="text-xs theme-muted leading-relaxed">
-                For major utility projects, state-wide automotive tenders, or multi-megawatt IPP concessions, contact our executive bidding desk directly:
+            <div class="p-6 rounded-2xl theme-card border space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined theme-accent text-xl">mark_chat_unread</span>
+                <span class="text-sm font-semibold theme-heading">Government &amp; Large Commercial Tenders</span>
+              </div>
+              <p class="text-xs theme-muted leading-relaxed">
+                For major utility projects, state-wide automotive tenders, or multi-megawatt IPP concessions, contact
+                our executive bidding desk directly:
               </p>
-<div class="text-xs font-mono theme-accent flex flex-wrap items-center gap-2"><a class="hover:underline" href="mailto:emmanueluko00@gmail.com">emmanueluko00@gmail.com</a><span class="">//</span><a class="hover:underline" href="https://wa.me/2348026250869" target="_blank">WhatsApp: 08026250869</a></div>
-</div>
-</div>
-<!-- Right Column: Interactive Form -->
-<div class="lg:col-span-7 rounded-2xl theme-card border p-8 sm:p-10 shadow-2xl">
-<form class="space-y-6" id="dealer-quote-form" onsubmit="event.preventDefault(); document.getElementById('quote-success-banner').classList.remove('hidden');">
-<!-- Step 1: Category -->
-<div>
-<label class="block text-xs font-mono uppercase tracking-wider theme-muted mb-3">1. Select Division or OEM Equipment</label>
-<div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-<label class="p-3 rounded-xl theme-inner-box border hover:border-cyan-500/40 flex items-center gap-2.5 cursor-pointer transition-all">
-<input checked="" class="text-cyan-500 focus:ring-0 bg-transparent border-slate-400" name="product_cat" type="radio" value="motors">
-<span class="text-xs font-medium theme-heading">Mikano Motors</span>
-</label>
-<label class="p-3 rounded-xl theme-inner-box border hover:border-cyan-500/40 flex items-center gap-2.5 cursor-pointer transition-all">
-<input class="text-cyan-500 focus:ring-0 bg-transparent border-slate-400" name="product_cat" type="radio" value="power">
-<span class="text-xs font-medium theme-heading">Power Gen</span>
-</label>
-<label class="p-3 rounded-xl theme-inner-box border hover:border-cyan-500/40 flex items-center gap-2.5 cursor-pointer transition-all">
-<input class="text-cyan-500 focus:ring-0 bg-transparent border-slate-400" name="product_cat" type="radio" value="panels">
-<span class="text-xs font-medium theme-heading">Switchboards</span>
-</label>
-<label class="p-3 rounded-xl theme-inner-box border hover:border-cyan-500/40 flex items-center gap-2.5 cursor-pointer transition-all">
-<input class="text-cyan-500 focus:ring-0 bg-transparent border-slate-400" name="product_cat" type="radio" value="schneider">
-<span class="text-xs font-medium theme-heading">Schneider</span>
-</label>
-<label class="p-3 rounded-xl theme-inner-box border hover:border-cyan-500/40 flex items-center gap-2.5 cursor-pointer transition-all">
-<input class="text-cyan-500 focus:ring-0 bg-transparent border-slate-400" name="product_cat" type="radio" value="raychem">
-<span class="text-xs font-medium theme-heading">TE Raychem</span>
-</label>
-<label class="p-3 rounded-xl theme-inner-box border hover:border-cyan-500/40 flex items-center gap-2.5 cursor-pointer transition-all">
-<input class="text-cyan-500 focus:ring-0 bg-transparent border-slate-400" name="product_cat" type="radio" value="rentals">
-<span class="text-xs font-medium theme-heading">IPP / Rentals</span>
-</label>
-</div>
-</div>
-<!-- Step 2: Capacity & Hub -->
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div>
-<label class="block text-xs font-mono uppercase tracking-wider theme-muted mb-2" for="capacity-field">2. Target Capacity / Model</label>
-<select class="w-full theme-inner-box border theme-border rounded-xl px-4 py-3 text-sm theme-heading focus:outline-none focus:border-cyan-500" id="capacity-field">
-<option>Changan UNI-K (Luxury AWD SUV)</option>
-<option>Deepal S07 Pure Electric SUV</option>
-<option>Changan CS95 7-Seater Executive</option>
-<option>ZNA Rich 6 Double Cabin Pickup</option>
-<option>100 kVA Perkins Diesel Generator</option>
-<option>500 kVA MTU Generator Set</option>
-<option>2,000 kVA IPP Synchronized System</option>
-<option>Form 3 / Form 4 Switchboard Panel</option>
-<option>Schneider 33kV/415V Transformer</option>
-<option>Raychem Heat-Shrink Cable Terminations</option>
-</select>
-</div>
-<div>
-<label class="block text-xs font-mono uppercase tracking-wider theme-muted mb-2" for="location-field">3. Preferred State / Hub</label>
-<select class="w-full theme-inner-box border theme-border rounded-xl px-4 py-3 text-sm theme-heading focus:outline-none focus:border-cyan-500" id="location-field">
-<option>Lagos - Victoria Island Headquarters</option>
-<option>Lagos - Ikeja Central Service Complex</option>
-<option>Abuja - Central Business District</option>
-<option>Port Harcourt - Trans Amadi Industrial Hub</option>
-<option>Kano - Bompai Industrial Estate</option>
-<option>Ibadan - Ring Road Showroom</option>
-</select>
-</div>
-</div>
-<!-- Step 3: Contact Inputs -->
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-<div>
-<label class="block text-xs font-mono uppercase tracking-wider theme-muted mb-2" for="client-name">Full Name</label>
-<input class="w-full theme-inner-box border theme-border rounded-xl px-4 py-3 text-sm theme-heading placeholder:text-zinc-500 focus:outline-none focus:border-cyan-500" id="client-name" placeholder="Engr. Adeola Bello" required="" type="text">
-</div>
-<div>
-<label class="block text-xs font-mono uppercase tracking-wider theme-muted mb-2" for="client-email">Work Email</label>
-<input class="w-full theme-inner-box border theme-border rounded-xl px-4 py-3 text-sm theme-heading placeholder:text-zinc-500 focus:outline-none focus:border-cyan-500" id="client-email" placeholder="corporate@company.ng" required="" type="email">
-</div>
-<div>
-<label class="block text-xs font-mono uppercase tracking-wider theme-muted mb-2" for="client-phone">Phone Number</label>
-<input class="w-full theme-inner-box border theme-border rounded-xl px-4 py-3 text-sm theme-heading placeholder:text-zinc-500 focus:outline-none focus:border-cyan-500" id="client-phone" placeholder="+234 800 000 0000" required="" type="tel">
-</div>
-</div>
-<!-- Financing Checkbox -->
-<div class="p-4 rounded-xl theme-inner-box border flex items-center justify-between">
-<label class="flex items-center gap-3 cursor-pointer">
-<input class="rounded text-cyan-500 focus:ring-0 bg-transparent border-slate-400" type="checkbox">
-<span class="text-xs theme-muted">Include UBA / Partner Auto-Financing / Asset Lease Schedule</span>
-</label>
-<span class="text-[10px] font-mono theme-accent uppercase">Zero Wait</span>
-</div>
-<!-- Submit Button -->
-<button class="w-full py-4 rounded-full theme-pill-btn font-bold text-xs tracking-wider uppercase hover:opacity-90 shadow-[0_0_25px_rgba(0,210,238,0.25)] transition-all flex items-center justify-center gap-2" type="submit">
-<span class="">Generate Official Quotation</span>
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-</button>
-<!-- Success State -->
-<div class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs flex items-center gap-3" id="quote-success-banner">
-<span class="material-symbols-outlined text-emerald-500">check_circle</span>
-<div>
-<div class="font-bold">Quotation Request Dispatched // Reference #MK-9281</div>
-<div class="theme-muted">A dedicated sales engineer has received your spec sheet and will email formal pricing shortly.</div>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</section>
-<!-- CLEAN LUXURY CTA BANNER -->
-<section class="py-24 lg:py-28 border-b theme-border">
-<div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-<span class="text-xs font-mono uppercase tracking-widest theme-accent block mb-3">PAN-AFRICAN REACH</span>
-<h2 class="font-display text-3xl sm:text-5xl font-bold theme-heading tracking-tight max-w-3xl mx-auto mb-6">
+              <div class="text-xs font-mono theme-accent flex flex-wrap items-center gap-2"><a class="hover:underline"
+                  href="mailto:emmanueluko00@gmail.com">emmanueluko00@gmail.com</a><span class="">//</span><a
+                  class="hover:underline" href="tel:+2348026250869">Call Dealer</a>
+              </div>
+            </div>
+          </div>
+          <!-- Right Column: Interactive Form -->
+          <div class="lg:col-span-7 rounded-2xl theme-card border p-8 sm:p-10 shadow-2xl">
+            <form class="space-y-6" id="dealer-quote-form"
+              onsubmit="event.preventDefault(); document.getElementById('quote-success-banner').classList.remove('hidden');">
+              <!-- Step 1: Category -->
+              <div>
+                <label class="block text-xs font-mono uppercase tracking-wider theme-muted mb-3">1. Select Division or
+                  OEM Equipment</label>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                  <label
+                    class="p-3 rounded-xl theme-inner-box border hover:border-cyan-500/40 flex items-center gap-2.5 cursor-pointer transition-all">
+                    <input checked="" class="text-cyan-500 focus:ring-0 bg-transparent border-slate-400"
+                      name="product_cat" type="radio" value="motors">
+                    <span class="text-xs font-medium theme-heading">Mikano Motors</span>
+                  </label>
+                  <label
+                    class="p-3 rounded-xl theme-inner-box border hover:border-cyan-500/40 flex items-center gap-2.5 cursor-pointer transition-all">
+                    <input class="text-cyan-500 focus:ring-0 bg-transparent border-slate-400" name="product_cat"
+                      type="radio" value="power">
+                    <span class="text-xs font-medium theme-heading">Power Gen</span>
+                  </label>
+                  <label
+                    class="p-3 rounded-xl theme-inner-box border hover:border-cyan-500/40 flex items-center gap-2.5 cursor-pointer transition-all">
+                    <input class="text-cyan-500 focus:ring-0 bg-transparent border-slate-400" name="product_cat"
+                      type="radio" value="panels">
+                    <span class="text-xs font-medium theme-heading">Switchboards</span>
+                  </label>
+                  <label
+                    class="p-3 rounded-xl theme-inner-box border hover:border-cyan-500/40 flex items-center gap-2.5 cursor-pointer transition-all">
+                    <input class="text-cyan-500 focus:ring-0 bg-transparent border-slate-400" name="product_cat"
+                      type="radio" value="schneider">
+                    <span class="text-xs font-medium theme-heading">Schneider</span>
+                  </label>
+                  <label
+                    class="p-3 rounded-xl theme-inner-box border hover:border-cyan-500/40 flex items-center gap-2.5 cursor-pointer transition-all">
+                    <input class="text-cyan-500 focus:ring-0 bg-transparent border-slate-400" name="product_cat"
+                      type="radio" value="raychem">
+                    <span class="text-xs font-medium theme-heading">TE Raychem</span>
+                  </label>
+                  <label
+                    class="p-3 rounded-xl theme-inner-box border hover:border-cyan-500/40 flex items-center gap-2.5 cursor-pointer transition-all">
+                    <input class="text-cyan-500 focus:ring-0 bg-transparent border-slate-400" name="product_cat"
+                      type="radio" value="rentals">
+                    <span class="text-xs font-medium theme-heading">IPP / Rentals</span>
+                  </label>
+                </div>
+              </div>
+              <!-- Step 2: Capacity & Hub -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono uppercase tracking-wider theme-muted mb-2"
+                    for="capacity-field">2. Target Capacity / Model</label>
+                  <select
+                    class="w-full theme-inner-box border theme-border rounded-xl px-4 py-3 text-sm theme-heading focus:outline-none focus:border-cyan-500"
+                    id="capacity-field">
+                    <optgroup label="Changan">
+                      <option value="changan-eado-elite">Changan Eado — Elite</option>
+                      <option value="changan-eado-plus-luxury">Changan Eado Plus — Luxury</option>
+                      <option value="changan-eado-ev">Changan Eado EV</option>
+                      <option value="changan-cs15-luxury">Changan CS15 — Luxury</option>
+                      <option value="changan-cs35-plus-luxury">Changan CS35 Plus — Luxury</option>
+                      <option value="changan-cs55-pro">Changan CS55 Pro</option>
+                      <option value="changan-x7-plus-luxury-pro">Changan X7 Plus — Luxury Pro</option>
+                      <option value="changan-cs95-plus">Changan CS95 Plus</option>
+                      <option value="changan-uni-s-luxury">Changan UNI-S — Luxury</option>
+                      <option value="changan-uni-s-luxury-pro">Changan UNI-S — Luxury Pro</option>
+                      <option value="changan-uni-t-suv">Changan UNI-T — SUV</option>
+                      <option value="changan-uni-k-bespoke">Changan UNI-K — Bespoke</option>
+                    </optgroup>
+                    <optgroup label="Deepal">
+                      <option value="deepal-g318-reev">Deepal G318 REEV</option>
+                      <option value="deepal-s07-reev">Deepal S07 REEV</option>
+                      <option value="deepal-s05-reev">Deepal S05 REEV</option>
+                    </optgroup>
+                    <optgroup label="MAXUS">
+                      <option value="maxus-d90-max-executive">MAXUS D90 MAX — Executive</option>
+                      <option value="maxus-d90-max-executive-pro">MAXUS D90 MAX — Executive Pro</option>
+                      <option value="maxus-t60-comfort">MAXUS T60 — Comfort</option>
+                      <option value="maxus-t60-comfort-4x4">MAXUS T60 — Comfort 4×4</option>
+                      <option value="maxus-t60-luxury">MAXUS T60 — Luxury</option>
+                      <option value="maxus-t90-luxury">MAXUS T90 — Luxury</option>
+                    </optgroup>
+                    <optgroup label="Other Vehicles">
+                      <option value="zna-rich-6">ZNA Rich 6 Double Cabin Pickup</option>
+                    </optgroup>
+                    <option>100 kVA Perkins Diesel Generator</option>
+                    <option>500 kVA MTU Generator Set</option>
+                    <option>2,000 kVA IPP Synchronized System</option>
+                    <option>Form 3 / Form 4 Switchboard Panel</option>
+                    <option>Schneider 33kV/415V Transformer</option>
+                    <option>Raychem Heat-Shrink Cable Terminations</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-mono uppercase tracking-wider theme-muted mb-2"
+                    for="location-field">3. Preferred State / Hub</label>
+                  <select
+                    class="w-full theme-inner-box border theme-border rounded-xl px-4 py-3 text-sm theme-heading focus:outline-none focus:border-cyan-500"
+                    id="location-field">
+                    <option>Lagos - Victoria Island Headquarters</option>
+                    <option>Lagos - Ikeja Central Service Complex</option>
+                    <option>Abuja - Central Business District</option>
+                    <option>Port Harcourt - Trans Amadi Industrial Hub</option>
+                    <option>Kano - Bompai Industrial Estate</option>
+                    <option>Ibadan - Ring Road Showroom</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Step 3: Contact Inputs -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <label class="block text-xs font-mono uppercase tracking-wider theme-muted mb-2"
+                    for="client-name">Full Name</label>
+                  <input
+                    class="w-full theme-inner-box border theme-border rounded-xl px-4 py-3 text-sm theme-heading placeholder:text-zinc-500 focus:outline-none focus:border-cyan-500"
+                    id="client-name" placeholder="Engr. Adeola Bello" required="" type="text">
+                </div>
+                <div>
+                  <label class="block text-xs font-mono uppercase tracking-wider theme-muted mb-2"
+                    for="client-email">Work Email</label>
+                  <input
+                    class="w-full theme-inner-box border theme-border rounded-xl px-4 py-3 text-sm theme-heading placeholder:text-zinc-500 focus:outline-none focus:border-cyan-500"
+                    id="client-email" placeholder="corporate@company.ng" required="" type="email">
+                </div>
+                <div>
+                  <label class="block text-xs font-mono uppercase tracking-wider theme-muted mb-2"
+                    for="client-phone">Phone Number</label>
+                  <input
+                    class="w-full theme-inner-box border theme-border rounded-xl px-4 py-3 text-sm theme-heading placeholder:text-zinc-500 focus:outline-none focus:border-cyan-500"
+                    id="client-phone" placeholder="+234 800 000 0000" required="" type="tel">
+                </div>
+              </div>
+              <!-- Financing Checkbox -->
+              <div class="p-4 rounded-xl theme-inner-box border flex items-center justify-between">
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input class="rounded text-cyan-500 focus:ring-0 bg-transparent border-slate-400" type="checkbox">
+                  <span class="text-xs theme-muted">Include UBA / Partner Auto-Financing / Asset Lease Schedule</span>
+                </label>
+                <span class="text-[10px] font-mono theme-accent uppercase">Zero Wait</span>
+              </div>
+              <!-- Submit Button -->
+              <button
+                class="w-full py-4 rounded-full theme-pill-btn font-bold text-xs tracking-wider uppercase hover:opacity-90 shadow-[0_0_25px_rgba(0,210,238,0.25)] transition-all flex items-center justify-center gap-2"
+                type="submit">
+                <span class="">Generate Official Quotation</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </button>
+              <!-- Success State -->
+              <div
+                class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs flex items-center gap-3"
+                id="quote-success-banner">
+                <span class="material-symbols-outlined text-emerald-500">check_circle</span>
+                <div>
+                  <div class="font-bold">Quotation Request Dispatched // Reference #MK-9281</div>
+                  <div class="theme-muted">A dedicated sales engineer has received your spec sheet and will email formal
+                    pricing shortly.</div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CLEAN LUXURY CTA BANNER -->
+    <section class="py-24 lg:py-28 border-b theme-border">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+        <span class="text-xs font-mono uppercase tracking-widest theme-accent block mb-3">PAN-AFRICAN REACH</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold theme-heading tracking-tight max-w-3xl mx-auto mb-6">
           Powering Nigeria's Industry with Next-Gen Precision.
         </h2>
-<p class="theme-muted text-base max-w-xl mx-auto leading-relaxed mb-10">
-          Visit any of our 18 assembly hubs nationwide, inspect our soundproof test rooms, or speak with an engineering specialist.
+        <p class="theme-muted text-base max-w-xl mx-auto leading-relaxed mb-10">
+          Visit any of our 18 assembly hubs nationwide, inspect our soundproof test rooms, or speak with an engineering
+          specialist.
         </p>
-<div class="flex flex-wrap items-center justify-center gap-4"><a class="px-8 py-4 rounded-full theme-pill-btn font-semibold text-xs tracking-wider uppercase shadow-[0_0_30px_rgba(0,210,238,0.3)] hover:opacity-90 transition-all" href="mailto:emmanueluko00@gmail.com">Initiate Project Inquiry</a><a class="px-8 py-4 rounded-full theme-elevated border theme-border theme-heading font-medium text-xs tracking-wider uppercase hover:opacity-80 transition-all" href="https://wa.me/2348026250869" target="_blank">WhatsApp: 08026250869</a></div>
-</div>
-</section>
-</main>
-<!-- REFINED LUXURY FOOTER -->
-<footer class="theme-footer text-text-muted pt-20 pb-12 transition-colors duration-300">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-<!-- Brand Info -->
-<div class="lg:col-span-2 space-y-4">
-<div class="flex items-center gap-2">
-<span class="font-display font-bold text-lg theme-heading tracking-wider uppercase">MIKANO</span>
-<span class="text-xs uppercase font-mono theme-accent">International</span>
-</div>
-<p class="text-xs theme-muted leading-relaxed max-w-sm">
-            Pan-African heavyweight delivering turnkey Power Generation (MTU, Perkins, YORC), Automotive transit (Changan, Deepal, Maxus, ZNA), and licensed Schneider Electric / TE Raychem infrastructure.
+        <div class="flex flex-wrap items-center justify-center gap-4"><a
+            class="px-8 py-4 rounded-full theme-pill-btn font-semibold text-xs tracking-wider uppercase shadow-[0_0_30px_rgba(0,210,238,0.3)] hover:opacity-90 transition-all"
+            href="mailto:emmanueluko00@gmail.com">Initiate Project Inquiry</a><a
+            class="px-8 py-4 rounded-full theme-elevated border theme-border theme-heading font-medium text-xs tracking-wider uppercase hover:opacity-80 transition-all"
+            href="tel:+2348026250869">Call Dealer</a></div>
+      </div>
+    </section>
+  </main>
+  <!-- REFINED LUXURY FOOTER -->
+  <footer class="theme-footer text-text-muted pt-20 pb-12 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        <!-- Brand Info -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-2"><a href="#"><img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfBR-p7FVvN4HxPA7R6nmXs-LczKbd4qX8WCtb3Bc3CCCoaGCVzZ7_rOLZLoXRT0LpVf0FdXHxny-wmr5Cj2Sti5gpmv4JjkhOI-RXyD4FgV4ikk9WfExgiN68DmgfpUi3dQcID-kROX-YVuKNX5KmhM_9ZiPNrxUaDvtQdxTFcJaTXq9w0bJKhcsTskzwZ08LTeaAm5XoT4eaBCiQlrtjlBMN8qnafQqSzLD-PyWVrphHs5-G7AyE"
+                alt="Mikano International" class="h-9 w-auto object-contain"></a></div>
+          <p class="text-xs theme-muted leading-relaxed max-w-sm">
+            Pan-African heavyweight delivering turnkey Power Generation (MTU, Perkins, YORC), Automotive transit
+            (Changan, Deepal, Maxus, ZNA), and licensed Schneider Electric / TE Raychem infrastructure.
           </p>
-<div class="flex items-center gap-3 pt-2 text-[10px] font-mono">
-<span class="px-2.5 py-1 rounded theme-elevated border theme-border theme-heading">ISO 9001:2015</span>
-<span class="px-2.5 py-1 rounded theme-elevated border theme-border theme-heading">ISO 45001:2018</span>
-<span class="px-2.5 py-1 rounded theme-elevated border theme-border theme-heading">SONCAP Validated</span>
-</div>
-</div>
-<!-- Col 1 -->
-<div class="space-y-3">
-<h4 class="text-xs font-mono uppercase tracking-wider theme-heading">Divisions</h4>
-<ul class="space-y-2 text-xs theme-muted">
-<li class=""><a class="hover:text-primary transition-colors" href="#automotive">Mikano Motors</a></li>
-<li class=""><a class="hover:text-primary transition-colors" href="#power-gen">Industrial Power Gen</a></li>
-<li class=""><a class="hover:text-primary transition-colors" href="#divisions">Custom Switchboards</a></li>
-<li class=""><a class="hover:text-primary transition-colors" href="#alliances">Commercial Lighting</a></li>
-<li class=""><a class="hover:text-primary transition-colors" href="#power-gen">Generator Rental Fleet</a></li>
-</ul>
-</div>
-<!-- Col 2 -->
-<div class="space-y-3">
-<h4 class="text-xs font-mono uppercase tracking-wider theme-heading">Alliances</h4>
-<ul class="space-y-2 text-xs theme-muted">
-<li class=""><a class="hover:text-primary transition-colors" href="#alliances">Schneider Electric</a></li>
-<li class=""><a class="hover:text-primary transition-colors" href="#alliances">TE Connectivity Raychem</a></li>
-<li class=""><a class="hover:text-primary transition-colors" href="#power-gen">MTU Rolls-Royce</a></li>
-<li class=""><a class="hover:text-primary transition-colors" href="#power-gen">Perkins Engines</a></li>
-<li class=""><a class="hover:text-primary transition-colors" href="#automotive">Changan Automobile</a></li>
-</ul>
-</div>
-<!-- Col 3 -->
-<div class="space-y-3">
-<h4 class="text-xs font-mono uppercase tracking-wider theme-heading">Operations</h4>
-<ul class="space-y-2 text-xs theme-muted"><li class=""><span class="theme-heading">WhatsApp:</span> <a class="theme-accent hover:underline" href="https://wa.me/2348026250869" target="_blank">08026250869</a></li><li class=""><span class="theme-heading">Email:</span> <a class="theme-accent hover:underline" href="mailto:emmanueluko00@gmail.com">emmanueluko00@gmail.com</a></li><li class=""><span class="theme-heading">Headquarters:</span> Victoria Island, Lagos</li><li class=""><span class="theme-heading">Assembly:</span> WAMCO Industrial Hub</li><li class=""><span class="theme-heading">Depots:</span> 18 Locations Nationwide</li><li class=""><a class="theme-accent hover:underline" href="mailto:emmanueluko00@gmail.com">Request Dealership RFP</a></li></ul>
-</div>
-</div>
-<!-- Bottom Bar -->
-<div class="pt-8 border-t theme-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs theme-muted">
-<p class="">© 2025 Mikano International Limited. All Rights Reserved.</p>
-<div class="flex items-center gap-6">
-<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
-<a class="hover:text-primary transition-colors" href="#">Terms of Supply</a>
-<a class="hover:text-primary transition-colors" href="#">Warranty Disclaimers</a>
-</div>
-</div>
-</div>
-</footer>
-<!-- Interactive Theme Switching Script -->
-<script>
-  function updateThemeUI(isDark) {
-    const desktopIcon = document.getElementById('theme-icon-desktop');
-    const desktopText = document.getElementById('theme-text-desktop');
-    const mobileIcon = document.getElementById('theme-icon-mobile');
-    const mobileText = document.getElementById('theme-text-mobile');
+          <div class="flex items-center gap-3 pt-2 text-[10px] font-mono">
+            <span class="px-2.5 py-1 rounded theme-elevated border theme-border theme-heading">ISO 9001:2015</span>
+            <span class="px-2.5 py-1 rounded theme-elevated border theme-border theme-heading">ISO 45001:2018</span>
+            <span class="px-2.5 py-1 rounded theme-elevated border theme-border theme-heading">SONCAP Validated</span>
+          </div>
+        </div>
+        <!-- Col 1 -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono uppercase tracking-wider theme-heading">Divisions</h4>
+          <ul class="space-y-2 text-xs theme-muted">
+            <li class=""><a class="hover:text-primary transition-colors" href="#automotive">Mikano Motors</a></li>
+            <li class=""><a class="hover:text-primary transition-colors" href="#power-gen">Industrial Power Gen</a></li>
+            <li class=""><a class="hover:text-primary transition-colors" href="#divisions">Custom Switchboards</a></li>
+            <li class=""><a class="hover:text-primary transition-colors" href="#alliances">Commercial Lighting</a></li>
+            <li class=""><a class="hover:text-primary transition-colors" href="#power-gen">Generator Rental Fleet</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Col 2 -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono uppercase tracking-wider theme-heading">Alliances</h4>
+          <ul class="space-y-2 text-xs theme-muted">
+            <li class=""><a class="hover:text-primary transition-colors" href="#alliances">Schneider Electric</a></li>
+            <li class=""><a class="hover:text-primary transition-colors" href="#alliances">TE Connectivity Raychem</a>
+            </li>
+            <li class=""><a class="hover:text-primary transition-colors" href="#power-gen">MTU Rolls-Royce</a></li>
+            <li class=""><a class="hover:text-primary transition-colors" href="#power-gen">Perkins Engines</a></li>
+            <li class=""><a class="hover:text-primary transition-colors" href="#automotive">Changan Automobile</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono uppercase tracking-wider theme-heading">Operations</h4>
+          <ul class="space-y-2 text-xs theme-muted">
+            <li class=""><a class="theme-accent hover:underline" href="tel:+2348026250869">Call Dealer</a></li>
+            <li class=""><span class="theme-heading">Email:</span> <a class="theme-accent hover:underline"
+                href="mailto:emmanueluko00@gmail.com">emmanueluko00@gmail.com</a></li>
+            <li class=""><span class="theme-heading">Headquarters:</span> Victoria Island, Lagos</li>
+            <li class=""><span class="theme-heading">Assembly:</span> WAMCO Industrial Hub</li>
+            <li class=""><span class="theme-heading">Depots:</span> 18 Locations Nationwide</li>
+            <li class=""><a class="theme-accent hover:underline" href="mailto:emmanueluko00@gmail.com">Request
+                Dealership RFP</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Bottom Bar -->
+      <div
+        class="pt-8 border-t theme-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs theme-muted">
+        <p class="">© 2025 Mikano International Limited. All Rights Reserved.</p>
+        <div class="flex items-center gap-6">
+          <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+          <a class="hover:text-primary transition-colors" href="#">Terms of Supply</a>
+          <a class="hover:text-primary transition-colors" href="#">Warranty Disclaimers</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a aria-label="Chat with us on WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-300"
+    href="https://wa.me/2348026250869" rel="noopener noreferrer" target="_blank" title="Chat on WhatsApp">
+    <svg aria-hidden="true" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+      <path
+        d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.5 0 .15 5.34.15 11.92c0 2.1.55 4.15 1.6 5.96L.05 24l6.27-1.64a11.9 11.9 0 0 0 5.76 1.47h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.19-1.24-6.18-3.49-8.43ZM12.09 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.72.98.99-3.63-.24-.37a9.87 9.87 0 0 1-1.52-5.27c0-5.47 4.45-9.92 9.92-9.92a9.85 9.85 0 0 1 7.02 2.91 9.85 9.85 0 0 1 2.9 7.02c0 5.47-4.45 9.92-9.94 9.92Zm5.44-7.43c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.8-1.49-1.78-1.66-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.87 1.22 3.07c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.5 1.69.64.71.22 1.36.19 1.87.12.57-.08 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z" />
+    </svg>
+  </a>
+  <!-- Interactive Theme Switching Script -->
+  <script>
+    function updateThemeUI(isDark) {
+      const desktopIcon = document.getElementById('theme-icon-desktop');
+      const desktopText = document.getElementById('theme-text-desktop');
+      const mobileIcon = document.getElementById('theme-icon-mobile');
+      const mobileText = document.getElementById('theme-text-mobile');
 
-    if (isDark) {
-      if (desktopIcon) desktopIcon.textContent = 'light_mode';
-      if (desktopText) desktopText.textContent = 'Light';
-      if (mobileIcon) mobileIcon.textContent = 'light_mode';
-      if (mobileText) mobileText.textContent = 'Light Mode';
-    } else {
-      if (desktopIcon) desktopIcon.textContent = 'dark_mode';
-      if (desktopText) desktopText.textContent = 'Dark';
-      if (mobileIcon) mobileIcon.textContent = 'dark_mode';
-      if (mobileText) mobileText.textContent = 'Dark Mode';
+      if (isDark) {
+        if (desktopIcon) desktopIcon.textContent = 'light_mode';
+        if (desktopText) desktopText.textContent = 'Light';
+        if (mobileIcon) mobileIcon.textContent = 'light_mode';
+        if (mobileText) mobileText.textContent = 'Light Mode';
+      } else {
+        if (desktopIcon) desktopIcon.textContent = 'dark_mode';
+        if (desktopText) desktopText.textContent = 'Dark';
+        if (mobileIcon) mobileIcon.textContent = 'dark_mode';
+        if (mobileText) mobileText.textContent = 'Dark Mode';
+      }
     }
-  }
 
-  function toggleThemeMode() {
-    const htmlEl = document.documentElement;
-    const isCurrentlyDark = htmlEl.classList.contains('dark');
-    
-    if (isCurrentlyDark) {
-      htmlEl.classList.remove('dark');
-      htmlEl.classList.add('light');
-      localStorage.setItem('mikano_theme', 'light');
-      updateThemeUI(false);
-    } else {
-      htmlEl.classList.remove('light');
-      htmlEl.classList.add('dark');
-      localStorage.setItem('mikano_theme', 'dark');
-      updateThemeUI(true);
+    function toggleThemeMode() {
+      const htmlEl = document.documentElement;
+      const isCurrentlyDark = htmlEl.classList.contains('dark');
+
+      if (isCurrentlyDark) {
+        htmlEl.classList.remove('dark');
+        htmlEl.classList.add('light');
+        localStorage.setItem('mikano_theme', 'light');
+        updateThemeUI(false);
+      } else {
+        htmlEl.classList.remove('light');
+        htmlEl.classList.add('dark');
+        localStorage.setItem('mikano_theme', 'dark');
+        updateThemeUI(true);
+      }
     }
-  }
 
-  // Initialize from preference or saved state
-  (function initTheme() {
-    const saved = localStorage.getItem('mikano_theme');
-    if (saved === 'light') {
-      document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('light');
-      updateThemeUI(false);
-    } else {
-      document.documentElement.classList.add('dark');
-      document.documentElement.classList.remove('light');
-      updateThemeUI(true);
-    }
-  })();
-</script>
+    // Initialize from preference or saved state
+    (function initTheme() {
+      const saved = localStorage.getItem('mikano_theme');
+      if (saved === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        updateThemeUI(false);
+      } else {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+        updateThemeUI(true);
+      }
+    })();
+  </script>
+  <script>
+    (function initVehicleCatalog() {
+      const vehicles = [
+        { id: 'changan-eado-elite', brand: 'changan', brandName: 'Changan', model: 'Eado', trim: 'Elite', type: 'Sedan', specs: '4-cylinder turbo · 7-speed automatic · 260 Nm', price: '28.99', image: './cars/catalog/changan-eado-elite.jpg' },
+        { id: 'changan-eado-plus-luxury', brand: 'changan', brandName: 'Changan', model: 'Eado Plus', trim: 'Luxury', type: 'Sedan', specs: '4-cylinder turbo · 7-speed automatic', price: '42.99', image: './cars/catalog/changan-eado-plus-luxury.jpg' },
+        { id: 'changan-eado-ev', brand: 'changan', brandName: 'Changan', model: 'Eado EV', trim: 'Electric', type: 'Electric sedan', specs: '136 hp · 245 Nm · FWD · 410 km WLTP range', price: '39.99', image: './cars/catalog/changan-eado-ev.jpg' },
+        { id: 'changan-cs15-luxury', brand: 'changan', brandName: 'Changan', model: 'CS15', trim: 'Luxury', type: 'SUV', specs: '1.5L 4-cylinder · 5-speed automatic', price: '29.99', image: './cars/catalog/changan-cs15-luxury.jpg' },
+        { id: 'changan-cs35-plus-luxury', brand: 'changan', brandName: 'Changan', model: 'CS35 Plus', trim: 'Luxury', type: 'SUV', specs: '4-cylinder turbo · 7-speed automatic · 260 Nm', price: '33.99', image: './cars/catalog/changan-cs35-plus-luxury.jpg' },
+        { id: 'changan-cs55-pro', brand: 'changan', brandName: 'Changan', model: 'CS55 Pro', trim: 'Pro', type: 'SUV', specs: '4-cylinder turbo · 7-speed automatic · 260 Nm', price: '42.99', image: './cars/catalog/changan-cs55-pro.jpg' },
+        { id: 'changan-x7-plus-luxury-pro', brand: 'changan', brandName: 'Changan', model: 'X7 Plus', trim: 'Luxury Pro', type: '7-seat SUV', specs: '4-cylinder turbo · 7-speed automatic · 300 Nm', price: '41.99', image: './cars/catalog/changan-x7-plus.jpg' },
+        { id: 'changan-cs95-plus', brand: 'changan', brandName: 'Changan', model: 'CS95 Plus', trim: 'Plus', type: '7-seat SUV', specs: '4-cylinder turbo · 8-speed automatic · 360 Nm', price: '72.99', image: './cars/catalog/changan-cs95-plus.jpg' },
+        { id: 'changan-uni-s-luxury', brand: 'changan', brandName: 'Changan', model: 'UNI-S', trim: 'Luxury', type: 'SUV', specs: '4-cylinder turbo · 7-speed automatic · 300 Nm', price: '46.99', image: './cars/catalog/changan-uni-s.jpg' },
+        { id: 'changan-uni-s-luxury-pro', brand: 'changan', brandName: 'Changan', model: 'UNI-S', trim: 'Luxury Pro', type: 'SUV', specs: '4-cylinder turbo · 7-speed automatic · 300 Nm', price: '53.99', image: './cars/catalog/changan-uni-s.jpg' },
+        { id: 'changan-uni-t-suv', brand: 'changan', brandName: 'Changan', model: 'UNI-T', trim: 'SUV', type: 'SUV', specs: '4-cylinder turbo · 7-speed automatic · 260 Nm', price: '56.99', image: './cars/catalog/changan-uni-t.jpg' },
+        { id: 'changan-uni-k-bespoke', brand: 'changan', brandName: 'Changan', model: 'UNI-K', trim: 'Bespoke', type: 'SUV', specs: '4-cylinder turbo · 8-speed automatic · 400 Nm', price: '89.99', image: './cars/catalog/changan-uni-k.jpg' },
+        { id: 'deepal-g318-reev', brand: 'deepal', brandName: 'Deepal', model: 'G318', trim: 'REEV', type: 'Range-extended SUV', specs: '424 hp · 572 Nm · AWD · 1,100 km CLTC range', price: '85.99', image: './cars/catalog/deepal-g318-reev.jpg' },
+        { id: 'deepal-s07-reev', brand: 'deepal', brandName: 'Deepal', model: 'S07', trim: 'REEV', type: 'Range-extended SUV', specs: '258 hp · 320 Nm · RWD · 1,000 km CLTC range', price: '74.99', image: './cars/catalog/deepal-s07-reev.jpg' },
+        { id: 'deepal-s05-reev', brand: 'deepal', brandName: 'Deepal', model: 'S05', trim: 'REEV', type: 'Range-extended SUV', specs: '238 hp · 572 Nm · RWD · 900 km CLTC range', price: '61.99', image: './cars/catalog/deepal-s05-reev.jpg' },
+        { id: 'maxus-d90-max-executive', brand: 'maxus', brandName: 'MAXUS', model: 'D90 MAX', trim: 'Executive', type: 'SUV', specs: 'Turbo engine · 8-speed automatic · 4WD', price: '70.99', image: './cars/catalog/maxus-d90-max.jpg' },
+        { id: 'maxus-d90-max-executive-pro', brand: 'maxus', brandName: 'MAXUS', model: 'D90 MAX', trim: 'Executive Pro', type: 'SUV', specs: 'Turbo engine · 8-speed automatic · 4WD', price: '75.99', image: './cars/catalog/maxus-d90-max.jpg' },
+        { id: 'maxus-t60-comfort', brand: 'maxus', brandName: 'MAXUS', model: 'T60', trim: 'Comfort', type: 'Pickup', specs: '2.4L Mitsubishi engine · manual transmission', price: '31.99', image: './cars/catalog/maxus-t60-comfort.jpg' },
+        { id: 'maxus-t60-comfort-4x4', brand: 'maxus', brandName: 'MAXUS', model: 'T60', trim: 'Comfort 4×4', type: 'Pickup', specs: '2.4L Mitsubishi engine · manual transmission · 4×4', price: '35.99', image: './cars/catalog/maxus-t60-comfort.jpg' },
+        { id: 'maxus-t60-luxury', brand: 'maxus', brandName: 'MAXUS', model: 'T60', trim: 'Luxury', type: 'Pickup', specs: '2.0L turbo engine · automatic transmission · 4×4', price: '49.99', image: './cars/catalog/maxus-t60-luxury.jpg' },
+        { id: 'maxus-t90-luxury', brand: 'maxus', brandName: 'MAXUS', model: 'T90', trim: 'Luxury', type: 'Pickup', specs: '2.0L turbo engine · automatic transmission · 4×4', price: '58.99', image: './cars/catalog/maxus-t90-luxury.jpg' },
+        { id: 'zna-rich-6', brand: 'zna', brandName: 'ZNA', model: 'Rich 6', trim: 'Double Cabin', type: 'Pickup', specs: 'Industrial-grade double-cab utility pickup', price: null, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC1l1VnOrc6lzhmIVAcwug18u3C31tDvsRxAJbDUliwFfXZJRDx7dQeD2EWFI3zxxvfidqcl9VDCqaHxG_55B1tTMnypPAucK9YVsLzlKc0NkxzUfwaOaCyqsPaJa_hkxw9LVHakq6xPWrGKi95ngN4GtiitK-hm-C753426C6wn1-UYcFqGe0Ut9Oacc1vbNwZFgJT1s4cXzZrOVd_WQod-jHgzvk2xYSsIrqt6eMcbuSCHGqvMRbG' }
+      ];
+
+      const grid = document.getElementById('vehicle-grid');
+      const count = document.getElementById('vehicle-count');
+      const filters = document.querySelectorAll('[data-vehicle-filter]');
+      const quoteSelect = document.getElementById('capacity-field');
+
+      grid.innerHTML = vehicles.map((vehicle) => `
+        <article class="vehicle-card theme-card border rounded-2xl overflow-hidden flex flex-col group" data-vehicle-card data-brand="${vehicle.brand}">
+          <div class="h-48 overflow-hidden bg-slate-100">
+            <img alt="${vehicle.brandName} ${vehicle.model} ${vehicle.trim}" class="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105" decoding="async" loading="lazy" src="${vehicle.image}">
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="mb-4 flex items-start justify-between gap-3">
+              <div>
+                <span class="text-[10px] font-mono uppercase tracking-widest theme-accent">${vehicle.brandName}</span>
+                <h3 class="font-display text-lg font-bold theme-heading">${vehicle.model}</h3>
+                <p class="text-xs theme-muted">${vehicle.trim}</p>
+              </div>
+              <span class="rounded-full theme-elevated border theme-border px-2.5 py-1 text-[10px] theme-muted">${vehicle.type}</span>
+            </div>
+            <p class="mb-5 text-xs leading-relaxed theme-muted">${vehicle.specs}</p>
+            <div class="mt-auto flex items-end justify-between gap-3 border-t theme-border pt-4">
+              <div>
+                <span class="text-[10px] font-mono uppercase tracking-wider theme-muted">${vehicle.price ? 'List price*' : 'Pricing'}</span>
+                <p class="font-display text-xl font-bold theme-heading">${vehicle.price ? `₦${vehicle.price}M` : 'On request'}</p>
+              </div>
+              <a class="text-xs font-semibold theme-accent hover:underline" data-quote-model="${vehicle.id}" href="#quote-wizard">Inquire <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>`).join('');
+
+      const cards = grid.querySelectorAll('[data-vehicle-card]');
+      filters.forEach((filter) => {
+        filter.addEventListener('click', () => {
+          const selectedBrand = filter.dataset.vehicleFilter;
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            card.hidden = selectedBrand !== 'all' && card.dataset.brand !== selectedBrand;
+            if (!card.hidden) visibleCount += 1;
+          });
+
+          filters.forEach((button) => {
+            const isActive = button === filter;
+            button.setAttribute('aria-pressed', String(isActive));
+            button.classList.toggle('is-active', isActive);
+            button.classList.toggle('theme-pill-btn', isActive);
+            button.classList.toggle('theme-elevated', !isActive);
+            button.classList.toggle('border', !isActive);
+            button.classList.toggle('theme-border', !isActive);
+            button.classList.toggle('theme-muted', !isActive);
+          });
+
+          count.textContent = selectedBrand === 'all'
+            ? `Showing all ${visibleCount} vehicles`
+            : `Showing ${visibleCount} ${filter.textContent.trim()} vehicles`;
+        });
+      });
+
+      grid.querySelectorAll('[data-quote-model]').forEach((link) => {
+        link.addEventListener('click', () => {
+          quoteSelect.value = link.dataset.quoteModel;
+        });
+      });
+
+      count.textContent = `Showing all ${vehicles.length} vehicles`;
+    })();
+  </script>
+  <script>
+    (function initHeroSlideshow() {
+      const showcase = document.getElementById('hero-showcase');
+      if (!showcase) return;
+
+      const slides = [...showcase.querySelectorAll('[data-hero-slide]')];
+      const controls = [...showcase.querySelectorAll('[data-hero-control]')];
+      const title = document.getElementById('hero-slide-title');
+      const caption = document.getElementById('hero-slide-caption');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const slideCopy = [
+        {
+          title: 'Mikano Motors // MAXUS Lineup',
+          caption: 'A closer look at the commercial vehicles in the Mikano Motors lineup.'
+        },
+        {
+          title: 'Industrial Power // Assembly',
+          caption: 'Skilled technicians at work assembling industrial generator systems.'
+        },
+        {
+          title: 'Electrical Infrastructure // Transformers',
+          caption: 'Reliable transformer solutions for power distribution projects.'
+        },
+        {
+          title: 'Power Generation // MTU',
+          caption: 'Heavy-duty MTU generator systems for demanding power needs.'
+        }
+      ];
+      let activeIndex = 0;
+      let timer;
+      let isPaused = false;
+
+      function showSlide(index) {
+        activeIndex = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          const isActive = slideIndex === activeIndex;
+          slide.classList.toggle('is-active', isActive);
+          slide.setAttribute('aria-hidden', String(!isActive));
+          controls[slideIndex].setAttribute('aria-pressed', String(isActive));
+        });
+        title.textContent = slideCopy[activeIndex].title;
+        caption.textContent = slideCopy[activeIndex].caption;
+      }
+
+      function stopTimer() {
+        window.clearInterval(timer);
+        timer = undefined;
+      }
+
+      function startTimer() {
+        stopTimer();
+        if (prefersReducedMotion.matches || isPaused) return;
+        timer = window.setInterval(() => showSlide(activeIndex + 1), 6000);
+      }
+
+      controls.forEach((control) => {
+        control.addEventListener('click', () => {
+          showSlide(Number(control.dataset.heroControl));
+          startTimer();
+        });
+      });
+
+      showcase.addEventListener('mouseenter', () => {
+        isPaused = true;
+        stopTimer();
+      });
+      showcase.addEventListener('mouseleave', () => {
+        isPaused = false;
+        startTimer();
+      });
+      showcase.addEventListener('focusin', () => {
+        isPaused = true;
+        stopTimer();
+      });
+      showcase.addEventListener('focusout', (event) => {
+        if (showcase.contains(event.relatedTarget)) return;
+        isPaused = false;
+        startTimer();
+      });
+      prefersReducedMotion.addEventListener('change', startTimer);
+      startTimer();
+    })();
+  </script>
+  <script>
+    (function initScrollReveals() {
+      if (!('IntersectionObserver' in window)) return;
+
+      const targets = document.querySelectorAll('main section > div > *:not(#vehicle-grid), main section .grid > *');
+      const siblingIndexes = new Map();
+
+      targets.forEach((target) => {
+        const index = siblingIndexes.get(target.parentElement) || 0;
+        siblingIndexes.set(target.parentElement, index + 1);
+        target.dataset.reveal = 'up';
+        target.style.setProperty('--reveal-delay', `${Math.min(index, 4) * 90}ms`);
+      });
+
+      document.documentElement.classList.add('motion-ready');
+
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          currentObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.12 });
+
+      targets.forEach((target) => observer.observe(target));
+    })();
+  </script>
 
 
-</body></html>
+
+
+
+
+</body>
+
+</html>

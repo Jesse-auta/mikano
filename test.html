@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Mikano International | Industrial Power &amp; Automotive Engineering</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                scroll-behavior: smooth;
+            }
+        }
+
+        /* Strict Mikano Brand Light Theme: Crisp Whites, Soft Slates, Deep Graphite & Mikano Red (#D71920) */
+        :root {
+            --bg-surface: #F8F9FB;
+            --bg-surface-base: #FFFFFF;
+            --bg-surface-container: #F1F4F8;
+            --bg-surface-elevated: #FFFFFF;
+            --bg-surface-card: #FFFFFF;
+            --bg-surface-highlight: #F3F4F6;
+            --border-subtle: #E2E8F0;
+            --border-card: #E5E7EB;
+            --text-primary: #0F172A;
+            --text-muted: #4B5563;
+            --brand-primary: #D71920;
+            --brand-primary-hover: #b8141a;
+            --brand-accent-text: #D71920;
+            --brand-btn-text: #ffffff;
+            --header-bg: rgba(255, 255, 255, 0.92);
+            --card-inner-box: #F8F9FB;
+            --tag-bg: #F1F5F9;
+        }
+
+        body {
+            background-color: var(--bg-surface);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-surface);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 9999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D71920;
+        }
+
+        /* Core components mapped to Light Mode */
+        .theme-card {
+            background-color: var(--bg-surface-card) !important;
+            border-color: var(--border-card) !important;
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+        }
+
+        .theme-elevated {
+            background-color: var(--bg-surface-elevated) !important;
+            border-color: var(--border-subtle) !important;
+        }
+
+        .theme-inner-box {
+            background-color: var(--card-inner-box) !important;
+            border-color: var(--border-subtle) !important;
+        }
+
+        .theme-border {
+            border-color: var(--border-subtle) !important;
+        }
+
+        .theme-header {
+            background-color: var(--header-bg) !important;
+            border-color: var(--border-subtle) !important;
+        }
+
+        .theme-heading {
+            color: var(--text-primary) !important;
+        }
+
+        .theme-muted {
+            color: var(--text-muted) !important;
+        }
+
+        .theme-accent {
+            color: #D71920 !important;
+        }
+
+        .theme-pill-btn {
+            background-color: #D71920 !important;
+            color: #ffffff !important;
+        }
+
+        .theme-pill-btn:hover {
+            background-color: #b8141a !important;
+        }
+
+        .theme-footer {
+            background-color: #0F172A !important;
+            border-top: 1px solid #1E293B;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        surface: "#F8F9FB",
+                        "surface-base": "#FFFFFF",
+                        "surface-container": "#F1F4F8",
+                        "surface-elevated": "#FFFFFF",
+                        "surface-card": "#FFFFFF",
+                        "surface-highlight": "#F3F4F6",
+                        "border-subtle": "#E2E8F0",
+                        "border-hover": "rgba(215, 25, 32, 0.4)",
+                        "text-primary": "#0F172A",
+                        "text-muted": "#4B5563",
+                        primary: {
+                            DEFAULT: "#D71920",
+                            hover: "#b8141a",
+                            container: "#D71920",
+                            glow: "rgba(215, 25, 32, 0.15)",
+                            dark: "#8a0c11"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Space Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+
+<body class="selection:bg-primary selection:text-white antialiased bg-[#F8F9FB] text-slate-900">
+    <!-- MINIMALIST EDITORIAL HEADER -->
+    <header
+        class="fixed top-0 left-0 right-0 z-50 theme-header backdrop-blur-xl border-b theme-border transition-colors duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <!-- Brand Wordmark -->
+            <a class="flex items-center gap-3 group" href="#"><img alt="Mikano International Limited"
+                    class="h-9 w-auto object-contain transition-transform group-hover:scale-105 duration-300"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdf7qkgHEReGfsmOdwslRfETmb1-kzPoGSIVuoS6I74qbDu3tVRxiXU-XQ4ucIMv_SJx1jrxIdcJwMsK4IXnPm_un0T_nc8acspt2bSMj4n-TAdahtog1lvY_IYwU9LVi-dPmA9SRXkmXlezNg3gBLgCe_7lpCzCHdVpzlwtK7BLOMj3A2FA9NXZ68bpgnXguci6p771Wlq1Q06xFQweVwWtgjgabJyzKQvMD-gHD15EJEV3V0Qfoz"></a>
+            <!-- Streamlined Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a class="hover:text-primary transition-colors font-medium" href="#divisions">Divisions</a>
+                <a class="hover:text-primary transition-colors font-medium" href="#automotive">Automotive</a>
+                <a class="hover:text-primary transition-colors font-medium" href="#power-gen">Power Gen</a>
+                <a class="hover:text-primary transition-colors font-medium" href="#alliances">Alliances</a>
+                <a class="hover:text-primary transition-colors font-medium" href="#quote-wizard">Quote Wizard</a>
+            </nav>
+            <!-- Action & Hotline -->
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-mono text-slate-700 hover:text-primary hover:border-primary/50 transition-all shadow-sm"
+                    href="https://wa.me/2348026250869" target="_blank"><span
+                        class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span><span class="">WhatsApp:
+                        08026250869</span></a>
+                <a class="hidden sm:inline-flex px-5 py-2 rounded-full theme-pill-btn font-semibold text-xs tracking-wider uppercase shadow-[0_4px_14px_rgba(215,25,32,0.3)] hover:shadow-[0_6px_20px_rgba(215,25,32,0.45)] transition-all"
+                    href="#quote-wizard">Request Quote</a>
+                <button aria-label="Toggle Mobile Menu"
+                    class="md:hidden flex items-center justify-center p-2 rounded text-slate-900 focus:outline-none hover:bg-slate-100 transition-colors"
+                    onclick="const m = document.getElementById('mobile-nav-drawer'); m.classList.toggle('hidden');"><span
+                        class="material-symbols-outlined text-2xl">menu</span></button>
+            </div>
+        </div>
+        <!-- Mobile Drawer -->
+        <div class="hidden md:hidden theme-header border-t theme-border px-6 py-6 space-y-4 shadow-lg"
+            id="mobile-nav-drawer">
+            <nav class="flex flex-col space-y-3 text-sm font-medium text-slate-600">
+                <a class="hover:text-primary py-1 transition-colors" href="#divisions"
+                    onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Divisions</a>
+                <a class="hover:text-primary py-1 transition-colors" href="#automotive"
+                    onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Automotive</a>
+                <a class="hover:text-primary py-1 transition-colors" href="#power-gen"
+                    onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Power Gen</a>
+                <a class="hover:text-primary py-1 transition-colors" href="#alliances"
+                    onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Alliances</a>
+                <a class="hover:text-primary py-1 transition-colors" href="#quote-wizard"
+                    onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Quote Wizard</a>
+            </nav>
+            <div class="pt-4 border-t theme-border flex flex-col gap-3">
+                <a class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-xs font-mono text-slate-700 hover:text-primary transition-all"
+                    href="https://wa.me/2348026250869" target="_blank"><span
+                        class="w-1.5 h-1.5 rounded-full bg-primary"></span><span class="">WhatsApp:
+                        08026250869</span></a>
+                <a class="w-full text-center py-2.5 rounded-full theme-pill-btn font-semibold text-xs tracking-wider uppercase shadow-[0_4px_14px_rgba(215,25,32,0.3)]"
+                    href="#quote-wizard"
+                    onclick="document.getElementById('mobile-nav-drawer').classList.add('hidden')">Request Quote</a>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-20">
+        <!-- HERO SECTION WITH LUXURY EDITORIAL BREATHING ROOM -->
+        <section
+            class="relative pb-28 lg:pb-36 overflow-hidden border-b theme-border pt-20 lg:pt-16 bg-gradient-to-b from-white via-[#F8F9FB] to-[#F1F4F8]/60">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+                <!-- Top Badge -->
+                <div class="flex items-center gap-2 mb-4">
+                    <div
+                        class="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full bg-white border border-slate-200 text-xs font-mono text-slate-700 shadow-sm">
+                        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                        PAN-AFRICAN CONGLOMERATE // EST. 1993
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    <!-- Left Headline Column -->
+                    <div class="lg:col-span-7">
+                        <h1
+                            class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.08] mb-6">
+                            Powering Progress.<br><span class="text-primary">Driving Innovation.</span></h1>
+                        <p class="text-slate-600 text-base sm:text-lg max-w-xl font-normal leading-relaxed mb-10">
+                            From Sub-Saharan Africa’s largest generator assembly plant to next-gen Electric Vehicles and
+                            certified industrial switchgear, Mikano delivers turnkey engineering excellence.
+                        </p>
+                        <!-- Pill CTAs -->
+                        <div class="flex flex-wrap items-center gap-4 mb-8">
+                            <a class="px-7 py-3.5 rounded-full theme-pill-btn font-semibold text-sm shadow-[0_4px_16px_rgba(215,25,32,0.3)] hover:shadow-[0_6px_22px_rgba(215,25,32,0.45)] hover:opacity-95 transition-all flex items-center gap-2"
+                                href="#divisions">
+                                <span class="">Explore Products</span>
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </a>
+                            <a class="px-7 py-3.5 rounded-full bg-white border border-slate-300 text-slate-800 font-medium text-sm hover:border-primary hover:text-primary transition-all flex items-center gap-2 shadow-sm"
+                                href="mailto:emmanueluko00@gmail.com"><span class="">Book Technical
+                                    Consultation</span></a>
+                        </div>
+                        <!-- Micro Badges -->
+                        <div class="flex flex-wrap items-center gap-6 text-xs text-slate-500 font-mono">
+                            <span class="inline-flex items-center gap-2"><span class="text-primary font-bold">✓</span>
+                                24/7 Mobile Fleet</span>
+                            <span class="inline-flex items-center gap-2"><span class="text-primary font-bold">✓</span>
+                                18 Showrooms Nationwide</span>
+                            <span class="inline-flex items-center gap-2"><span class="text-primary font-bold">✓</span>
+                                OEM Guaranteed Genuine</span>
+                        </div>
+                    </div>
+                    <!-- Right Showcase Card -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="absolute -inset-1.5 rounded-2xl blur-xl pointer-events-none opacity-40"
+                            style="background: radial-gradient(circle, rgba(215, 25, 32, 0.22) 0%, rgba(215, 25, 32, 0.05) 60%, transparent 75%);">
+                        </div>
+                        <div
+                            class="relative rounded-2xl overflow-hidden border border-slate-200 bg-white p-3 shadow-xl group">
+                            <div class="relative h-[380px] sm:h-[440px] w-full rounded-xl overflow-hidden">
+                                <img alt="Mikano High-Tech Manufacturing Plant"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVsph00YWQNSdh9TpLhLzZjOcZKKQQJoKkR0QO74s3SWCEThhS6G-msOH9rBTTWa0S81-X1ucKliHmx3dWG4m_mbAjJS1-NtDzZpTF1U0cM9QVr3Ymb8QN0axotTWfxARIUnKsREhPmyD3qFsUnohedykbByle_zsnAprsPaXQ9rJOe8O-mUb9r1pX193QS2yE9-00Lg3WzyAucRjyNG3ItGj9VwKUHQgcardzTbpJo0MUrAjhgmSC">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent">
+                                </div>
+                                <div
+                                    class="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-md">
+                                    <div class="flex items-center justify-between mb-1.5">
+                                        <span
+                                            class="text-[11px] font-mono uppercase tracking-wider text-primary font-bold">WAMCO
+                                            Industrial Hub, Lagos</span>
+                                        <span
+                                            class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">OPERATIONAL</span>
+                                    </div>
+                                    <p class="text-xs text-slate-600 leading-relaxed font-normal">Precision robotic
+                                        testing bench, dyno chambers, and certified automated lines.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- KEY STATS METRICS BAR -->
+                <div class="mt-20 pt-12 border-t theme-border grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="space-y-1">
+                        <div class="text-[11px] uppercase tracking-widest font-mono text-slate-500 font-medium">Heavy
+                            Generation</div>
+                        <div class="font-display text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">9 kVA –
+                            4,000 kVA</div>
+                        <p class="text-xs text-slate-500">Continuous prime power capacity</p>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="text-[11px] uppercase tracking-widest font-mono text-slate-500 font-medium">
+                            Automotive Standard</div>
+                        <div class="font-display text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">6-Yr /
+                            200k km</div>
+                        <p class="text-xs text-slate-500">Premier warranty on passenger fleets</p>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="text-[11px] uppercase tracking-widest font-mono text-slate-500 font-medium">
+                            Switchboards</div>
+                        <div class="font-display text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Form 1 to
+                            Form 4</div>
+                        <p class="text-xs text-slate-500">Type-tested IEC certified switchgear</p>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="text-[11px] uppercase tracking-widest font-mono text-slate-500 font-medium">
+                            Compliance</div>
+                        <div class="font-display text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">ISO 9001
+                            &amp; 45001</div>
+                        <p class="text-xs text-slate-500">Internationally validated standards</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 01 / CORE DIVISIONS -->
+        <section class="py-24 lg:py-36 border-b theme-border bg-white" id="divisions">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <!-- Section Super Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div>
+                        <span class="text-xs font-mono uppercase tracking-widest text-primary font-bold block mb-3">01 /
+                            DIVISIONS</span>
+                        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Integrated
+                            Conglomerate Architecture</h2>
+                    </div>
+                    <p class="text-sm sm:text-base text-slate-600 max-w-md font-normal leading-relaxed">
+                        Operating five specialized industrial divisions delivering continuous grid stability, smart
+                        mobility, and high-voltage electrical engineering.
+                    </p>
+                </div>
+                <!-- 4 Division Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1 -->
+                    <div
+                        class="p-8 rounded-2xl bg-white border border-slate-200 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group shadow-sm">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-2xl">directions_car</span>
+                            </div>
+                            <h3 class="font-display text-xl font-bold text-slate-900 mb-2">Mikano Motors</h3>
+                            <p class="text-xs text-primary font-mono uppercase tracking-wider mb-4 font-semibold">EV
+                                &amp; Fuel Fleet</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Changan, Deepal, Maxus, &amp; ZNA. High-end passenger SUVs and tough industrial
+                                commercial utility vehicles.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t theme-border flex items-center justify-between">
+                            <span class="text-xs font-mono text-slate-500">6-Yr Warranty</span>
+                            <a class="text-xs font-semibold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                                href="#automotive">
+                                Learn more <span class="">→</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="p-8 rounded-2xl bg-white border border-slate-200 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group shadow-sm">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-2xl">bolt</span>
+                            </div>
+                            <h3 class="font-display text-xl font-bold text-slate-900 mb-2">Power Generation</h3>
+                            <p class="text-xs text-primary font-mono uppercase tracking-wider mb-4 font-semibold">9kVA –
+                                4,000kVA Sets</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Continuous diesel and gas generator assemblies backed by MTU, Perkins, and YORC
+                                powertrains with 24/7 technical fleet.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t theme-border flex items-center justify-between">
+                            <span class="text-xs font-mono text-slate-500">IPP Concessions</span>
+                            <a class="text-xs font-semibold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                                href="#power-gen">
+                                Learn more <span class="">→</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="p-8 rounded-2xl bg-white border border-slate-200 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group shadow-sm">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-2xl">lightbulb</span>
+                            </div>
+                            <h3 class="font-display text-xl font-bold text-slate-900 mb-2">Electrical &amp; Lighting
+                            </h3>
+                            <p class="text-xs text-primary font-mono uppercase tracking-wider mb-4 font-semibold">
+                                Commercial Grid</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Authorized distribution of certified MCBs, MCCBs, ACBs, distribution enclosures, and
+                                Signify Philips lighting installations.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t theme-border flex items-center justify-between">
+                            <span class="text-xs font-mono text-slate-500">IEC 60947</span>
+                            <a class="text-xs font-semibold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                                href="#alliances">
+                                Learn more <span class="">→</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="p-8 rounded-2xl bg-white border border-slate-200 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group shadow-sm">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-2xl">schema</span>
+                            </div>
+                            <h3 class="font-display text-xl font-bold text-slate-900 mb-2">Panel Solutions</h3>
+                            <p class="text-xs text-primary font-mono uppercase tracking-wider mb-4 font-semibold">Custom
+                                Switchboards</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Custom low voltage switchboards (LVSB), MV synchronizing setups, and licensed Siemens
+                                compact transformer substations.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t theme-border flex items-center justify-between">
+                            <span class="text-xs font-mono text-slate-500">Form 1 to 4</span>
+                            <a class="text-xs font-semibold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                                href="#quote-wizard">
+                                Learn more <span class="">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 02 / AUTOMOTIVE FLEET INNOVATION -->
+        <section class="py-24 lg:py-36 border-b theme-border bg-[#F8F9FB]" id="automotive">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <!-- Super Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div>
+                        <span class="text-xs font-mono uppercase tracking-widest text-primary font-bold block mb-3">02 /
+                            AUTOMOTIVE FLEET</span>
+                        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                            Future-Proof Mobility for Africa</h2>
+                    </div>
+                    <div
+                        class="flex items-center gap-2 p-1 rounded-full bg-white border border-slate-200 shadow-sm self-start md:self-auto">
+                        <span
+                            class="px-4 py-1.5 rounded-full bg-primary text-white text-xs font-semibold shadow-[0_2px_8px_rgba(215,25,32,0.3)]">Flagship
+                            Lineup</span>
+                        <span
+                            class="px-4 py-1.5 text-xs text-slate-600 hover:text-slate-900 transition-colors cursor-pointer font-medium">EV
+                            &amp; REEV</span>
+                        <span
+                            class="px-4 py-1.5 text-xs text-slate-600 hover:text-slate-900 transition-colors cursor-pointer font-medium">Commercial</span>
+                    </div>
+                </div>
+                <!-- Bento Grid Showcase -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+                    <!-- Featured Large Card: Changan UNI-K -->
+                    <div
+                        class="lg:col-span-7 rounded-2xl bg-white border border-slate-200 hover:border-primary/40 transition-all flex flex-col justify-between group shadow-sm">
+                        <div class="relative h-80 sm:h-96 w-full overflow-hidden rounded-t-2xl">
+                            <img alt="Changan UNI-K Luxury SUV"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQnHdoEjv5ttoFgUYMsUg-eZgWkquz_iwEyGtx2a4nCbMQzUsrvHahSiSXTeW7UsoLiUXOtuxpumySxOEKZpx3tjc506oSaEqH5lABv6O7QqQedE6KymQdA91cBbcQr1DeCr6HQmOrh9i3EqZX4jQIkafo0vPUeN97-y_ubUUKpvi7lz2NvOmu5mFNfsG3dQlscqSawwJe1gKGWUv3iSdgzP0uyZQ52rgQ0WDa_-A9zakUrU0_Agth">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent">
+                            </div>
+                            <div class="absolute top-6 left-6 flex items-center gap-2">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-[11px] font-mono text-primary font-bold uppercase shadow-sm">Flagship
+                                    SUV</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-[11px] font-mono text-white uppercase shadow-sm">2.0L
+                                    Turbo 4WD</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                                <div>
+                                    <h3 class="font-display text-2xl font-bold text-slate-900">Changan UNI-K</h3>
+                                    <p
+                                        class="text-xs font-mono text-slate-500 uppercase tracking-wider mt-1 font-medium">
+                                        Aisin 8-Speed // 233 HP // Quad Screens</p>
+                                </div>
+                                <div class="text-left sm:text-right">
+                                    <div class="text-xs font-mono text-slate-500">Nationwide Warranty</div>
+                                    <div class="text-base font-bold text-primary font-mono">6 Yrs / 200,000 km</div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Flagship executive crossover engineered with active noise cancellation, level-2
+                                autonomous cruise features, and Sony panoramic soundstage.
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <a class="px-5 py-2.5 rounded-full bg-primary hover:bg-[#b8141a] text-white font-semibold text-xs tracking-wide uppercase transition-all shadow-[0_4px_12px_rgba(215,25,32,0.3)]"
+                                    href="#quote-wizard">
+                                    Book Test Drive
+                                </a>
+                                <span class="text-xs font-mono text-slate-500">Financing via UBA available</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Deepal Electric EV Card -->
+                    <div
+                        class="lg:col-span-5 rounded-2xl bg-white border border-slate-200 hover:border-primary/40 transition-all flex flex-col justify-between group shadow-sm">
+                        <div class="relative h-80 sm:h-96 w-full overflow-hidden rounded-t-2xl">
+                            <img alt="Deepal S07 Electric Vehicle"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJEiwydlpDgdT1Rv4n_Szk9plmGRCCT8GNwG6-h7Hmi3Z0GONndYqZMwPk6yjqYIcYD1gaTkagUlW1ZEiBto9Zf6J9VoOkXJEKejXjM-5nupV53u22DVf9boxYko9zcspLfUF7iK9HjIrgjPmbxlZIcxwJTeIZvX6WYBfMfiuJWNt_-xzJ0s7HQJGN4DIiqRYONcQ_EOjmXO3Ai9EYR4hsgu1AuM7EG3jYGvnbJ_4-uxBuhtZ0hlL6">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent">
+                            </div>
+                            <div class="absolute top-6 left-6"><span
+                                    class="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-[11px] font-mono text-slate-900 font-semibold uppercase shadow-sm">Pure
+                                    EV &amp; REEV</span></div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="font-display text-2xl font-bold text-slate-900">Deepal S07 / L07</h3>
+                                <span class="text-xs font-mono text-primary font-bold">620 km CLTC Range</span>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Aerodynamic New Energy crossover designed for urban and regional electric transit with
+                                DC supercharging capability.
+                            </p>
+                            <div class="pt-4 border-t theme-border flex items-center justify-between">
+                                <span class="text-xs font-mono text-slate-500">0-100 km/h in 6.7s</span>
+                                <a class="text-xs font-mono font-semibold text-primary hover:text-red-700 transition-colors"
+                                    href="#quote-wizard">Request EV Specs →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row of 3 Fleet Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Changan UNI-T -->
+                    <div
+                        class="rounded-2xl bg-white border border-slate-200 p-6 flex flex-col justify-between group hover:border-primary/40 hover:shadow-md transition-all shadow-sm">
+                        <div>
+                            <div class="relative h-44 w-full rounded-xl overflow-hidden mb-5">
+                                <img alt="Changan UNI-T"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAboPFuWIE2wl9nl3YwErrI-7Waai_pdZfpyPkW_XtLdDGJINThNHUyWqZdy3KT2q4v2R7tKVpOjLl5oto9veXTQi_xxnqg6MxoxmeKl0hHFq4QzpBsW9Hq2y_rs1SlXrNRrpgLWlR6Ou2busc-j7_T986CbpFNXx7yHWAjv98hICwKT23uf-li3Y8shMK860lRChoXXA_1y_1nnRxWJOGHmYNrmd48EPYoTXO28FJZm7TYqP5FlqcX">
+                            </div>
+                            <h4 class="font-display text-lg font-bold text-slate-900 mb-1">Changan UNI-T</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Aggressive sport crossover with 1.5L Turbo
+                                and automated driving assistance.</p>
+                        </div>
+                        <div
+                            class="pt-4 mt-6 border-t theme-border flex justify-between items-center text-xs font-mono">
+                            <span class="text-slate-500">Sport Crossover</span>
+                            <a class="text-primary font-semibold hover:text-red-700 transition-colors"
+                                href="#quote-wizard">View Spec →</a>
+                        </div>
+                    </div>
+                    <!-- Changan CS95 -->
+                    <div
+                        class="rounded-2xl bg-white border border-slate-200 p-6 flex flex-col justify-between group hover:border-primary/40 hover:shadow-md transition-all shadow-sm">
+                        <div>
+                            <div class="relative h-44 w-full rounded-xl overflow-hidden mb-5">
+                                <img alt="Changan CS95"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIBZmhqprhdAysCwSBfgX1GKc3cuRv7OmVE_mul5_XcLEZhEVcLNZBLx6vyQ2Mp6xlzFLtcybDJGNesIKV1WuJ3C51YiwthSIGxKM4zBCSR6Ky9VLA48pJ5AXRj1JTyODBjFr8EwAXw3MgLs6VveVyGWP8KCTzQ1ztY8Cc697EzpGUrHEQ4Ps-dxTwj5Dvvzd4f67RhosuMDWFGPDX93Z1t0w5SSopzN-bvSI2Yhw59e7026KkuSv5">
+                            </div>
+                            <h4 class="font-display text-lg font-bold text-slate-900 mb-1">Changan CS95</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Executive 7-seater full-size SUV featuring
+                                BorgWarner intelligent AWD.</p>
+                        </div>
+                        <div
+                            class="pt-4 mt-6 border-t theme-border flex justify-between items-center text-xs font-mono">
+                            <span class="text-slate-500">Corporate Fleet</span>
+                            <a class="text-primary font-semibold hover:text-red-700 transition-colors"
+                                href="#quote-wizard">View Spec →</a>
+                        </div>
+                    </div>
+                    <!-- ZNA Rich 6 -->
+                    <div
+                        class="rounded-2xl bg-white border border-slate-200 p-6 flex flex-col justify-between group hover:border-primary/40 hover:shadow-md transition-all shadow-sm">
+                        <div>
+                            <div class="relative h-44 w-full rounded-xl overflow-hidden mb-5">
+                                <img alt="ZNA Rich 6 Double Cabin"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1l1VnOrc6lzhmIVAcwug18u3C31tDvsRxAJbDUliwFfXZJRDx7dQeD2EWFI3zxxvfidqcl9VDCqaHxG_55B1tTMnypPAucK9YVsLzlKc0NkxzUfwaOaCyqsPaJa_hkxw9LVHakq6xPWrGKi95ngN4GtiitK-hm-C753426C6wn1-UYcFqGe0Ut9Oacc1vbNwZFgJT1s4cXzZrOVd_WQod-jHgzvk2xYSsIrqt6eMcbuSCHGqvMRbG">
+                            </div>
+                            <h4 class="font-display text-lg font-bold text-slate-900 mb-1">ZNA Rich 6 Pickup</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Rugged double-cabin utility pickup built
+                                for harsh industrial operations.</p>
+                        </div>
+                        <div
+                            class="pt-4 mt-6 border-t theme-border flex justify-between items-center text-xs font-mono">
+                            <span class="text-slate-500">Industrial Grade</span>
+                            <a class="text-primary font-semibold hover:text-red-700 transition-colors"
+                                href="#quote-wizard">View Spec →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 03 / AFRICA'S POWER LEADER -->
+        <section class="py-24 lg:py-36 border-b theme-border bg-white" id="power-gen">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <!-- Super Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div>
+                        <span class="text-xs font-mono uppercase tracking-widest text-primary font-bold block mb-3">03 /
+                            POWER GENERATION</span>
+                        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Africa's
+                            Largest Generator Assembly</h2>
+                    </div>
+                    <p class="text-sm sm:text-base text-slate-600 max-w-md font-normal leading-relaxed">
+                        Over three continuous decades powering industrial complexes, hyperscale data centers, and
+                        critical telecommunication backbones across Sub-Saharan Africa.
+                    </p>
+                </div>
+                <!-- 3 Generous Power Cards (MTU, Perkins, YORC) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <!-- MTU Card -->
+                    <div
+                        class="rounded-2xl bg-white border border-slate-200 overflow-hidden flex flex-col justify-between group hover:border-primary/50 hover:shadow-lg transition-all shadow-sm">
+                        <div class="relative h-60 w-full overflow-hidden">
+                            <img alt="MTU Rolls-Royce Generator"
+                                class="w-full h-full object-contain p-2 bg-white group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZVxMhyIl7uTUKmp60oxzYzwWUQxJVedYBIeZGbxqnudjC6qk8reJhxDRkLKB_P_R9dlcK9tP2a0Zt7F-XlFAbA02-LDgwCCWzf6pPf--UMIs7F-pdldTnwGD7liCoj7URdoxEfPkVikTdxt6AAresIvr46myMh-r7t1xvKb6C_8WAEsGP393ml_gjlKG6nF5P8gI4ZOGG4LD84NGoIREIW_ARbM_QOFD7lfXdhNyzMjHHKrs0eII5">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent">
+                            </div>
+                            <div class="absolute top-4 left-4">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-mono text-slate-900 font-semibold shadow-sm">1,000
+                                    – 4,000 kVA</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-display text-xl font-bold text-slate-900 mb-2">MTU Solutions</h3>
+                            <p class="text-xs font-mono text-slate-500 uppercase mb-4 font-medium">Rolls-Royce Power
+                                Systems</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Engineered for continuous mission-critical duty in tier-4 data centers, medical
+                                clusters, and independent power projects.
+                            </p>
+                            <div class="pt-4 border-t theme-border flex items-center justify-between text-xs font-mono">
+                                <span class="text-slate-500">50 Hz / 415 V</span>
+                                <span class="text-primary font-bold">Continuous Prime</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Perkins Card -->
+                    <div
+                        class="rounded-2xl bg-white border border-slate-200 overflow-hidden flex flex-col justify-between group hover:border-primary/50 hover:shadow-lg transition-all shadow-sm">
+                        <div class="relative h-60 w-full overflow-hidden">
+                            <img alt="Perkins Industrial Generator"
+                                class="w-full h-full object-contain p-2 bg-white group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB02JMF08FZ8lsVSO7fFHu4DsGy2T0An8TgrREI3HFlwzuC_6DnipEX_Y1zetePGeP56jol1cKLXbW8E1f1JtBVVg3Zb1tHQERhnBbga0M7kQFiB-ECuySCi9RT6qluPwjogBUEeEeGiKV0e5hDtgqUtJCGyQHnry6XbvuYutVSRNN4RyAc-kJicnF0D-FEudzqDSZvXg-17LjwleW_FuSMjgaWpVFhJviRQbLG_kR5_dRpzfzWXjFZ">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent">
+                            </div>
+                            <div class="absolute top-4 left-4">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-mono text-slate-900 font-semibold shadow-sm">9
+                                    – 2,500 kVA</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-display text-xl font-bold text-slate-900 mb-2">Perkins Powered Series</h3>
+                            <p class="text-xs font-mono text-slate-500 uppercase mb-4 font-medium">Perkins UK Platform
+                            </p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Sub-Saharan Africa’s gold standard for low maintenance overheads, high thermal
+                                efficiency, and immediate parts access.
+                            </p>
+                            <div class="pt-4 border-t theme-border flex items-center justify-between text-xs font-mono">
+                                <span class="text-slate-500">DSE Controllers</span>
+                                <span class="text-primary font-bold">OEM Soundproof</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- YORC Card -->
+                    <div
+                        class="rounded-2xl bg-white border border-slate-200 overflow-hidden flex flex-col justify-between group hover:border-primary/50 hover:shadow-lg transition-all shadow-sm">
+                        <div class="relative h-60 w-full overflow-hidden">
+                            <img alt="YORC Continuous Power Generator"
+                                class="w-full h-full object-contain p-2 bg-white group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD47OSVXxBIr8BbzJr-DYzfZvToJZrJZ2pM98lpyqUJEy_k7IHfkDyNXfMKGkmob5qSv8ZD681jml1ObJUZIDHNRariZO9gr-8WyBsYvLGiAUazBSA4RySXFeetq_7gLiVzrB44yVEnPEBt8IektbHRn2A2pdIzNbVtmE9n-x0fLA4_i17HLPK4C6BnshlNKAUi8EV-ySicb9QI20fyMKeAmnfI7AJecMSeSSJLmN-ywQjPkD64YNhS">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent">
+                            </div>
+                            <div class="absolute top-4 left-4">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-mono text-slate-900 font-semibold shadow-sm">15
+                                    – 1,000 kVA</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-display text-xl font-bold text-slate-900 mb-2">YORC Generating Systems</h3>
+                            <p class="text-xs font-mono text-slate-500 uppercase mb-4 font-medium">Tropicalized
+                                Industrial</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Cost-efficient workhorses specifically built to withstand high African ambient humidity
+                                and continuous duty conditions.
+                            </p>
+                            <div class="pt-4 border-t theme-border flex items-center justify-between text-xs font-mono">
+                                <span class="text-slate-500">IP23 Alternators</span>
+                                <span class="text-primary font-bold">Heavy Duty Canopy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Emergency Fleet & IPP Highlight Box -->
+                <div
+                    class="p-8 lg:p-12 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+                    <div class="max-w-2xl">
+                        <div
+                            class="inline-flex items-center gap-2 text-xs font-mono text-primary font-bold uppercase mb-2">
+                            <span class="material-symbols-outlined text-base">emergency</span>
+                            <span class="">24/7 Redundant Rental Fleet &amp; IPP Concessions</span>
+                        </div>
+                        <h4 class="font-display text-xl sm:text-2xl font-bold text-slate-900 mb-3">Need 50kVA or 10MW
+                            Dispatched Rapidly?</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Our 1,200+ unit soundproof rental fleet arrives with dedicated on-site mechanical engineers,
+                            fuel monitoring, and synchronized transfer switchgear across Lagos, Abuja, and Port Harcourt
+                            within hours.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-4 flex-shrink-0">
+                        <a class="px-6 py-3 rounded-full bg-primary hover:bg-[#b8141a] text-white font-semibold text-xs tracking-wider uppercase transition-all flex items-center gap-2 shadow-[0_4px_14px_rgba(215,25,32,0.3)]"
+                            href="https://wa.me/2348026250869" target="_blank"><span
+                                class="w-2 h-2 rounded-full bg-white animate-pulse"></span><span
+                                class="material-symbols-outlined text-[16px]">call</span><span class="">WhatsApp:
+                                08026250869</span></a>
+                        <a class="px-6 py-3 rounded-full bg-white border border-slate-300 text-slate-800 font-medium text-xs tracking-wider uppercase hover:border-primary hover:text-primary transition-colors shadow-sm"
+                            href="mailto:emmanueluko00@gmail.com">Request Rental Proposal</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 04 / STRATEGIC OEM ALLIANCES -->
+        <section class="py-24 lg:py-36 border-b theme-border bg-[#F8F9FB]" id="alliances">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <!-- Super Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div>
+                        <span class="text-xs font-mono uppercase tracking-widest text-primary font-bold block mb-3">04 /
+                            STRATEGIC OEM PARTNERSHIPS</span>
+                        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                            World-Class Electrical Infrastructure</h2>
+                    </div>
+                    <p class="text-sm sm:text-base text-slate-600 max-w-md font-normal leading-relaxed">
+                        Authorized distributor and licensed solution architect for world-renowned electrical
+                        transmission and power protection manufacturers.
+                    </p>
+                </div>
+                <!-- 2 Feature Showcases -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                    <!-- Schneider Electric -->
+                    <div
+                        class="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200 hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between shadow-sm">
+                        <div>
+                            <div class="flex items-center justify-between mb-8">
+                                <span
+                                    class="px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-xs font-mono text-primary font-bold uppercase">Official
+                                    Partner</span>
+                                <span class="font-display font-bold text-lg text-slate-900 tracking-wider">SCHNEIDER
+                                    ELECTRIC</span>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-slate-900 mb-4">Certified Substation &amp;
+                                Breaker Solutions</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-8">
+                                Supply, integration, and warranty center for Schneider's premium low and medium voltage
+                                grid equipment across Nigeria.
+                            </p>
+                            <!-- Specs Grid -->
+                            <div class="grid grid-cols-2 gap-4 mb-8">
+                                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <div class="text-slate-900 font-semibold text-sm mb-1">Transformers</div>
+                                    <div class="text-xs text-slate-600">50 kVA – 2,500 kVA 33kV/415V</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <div class="text-slate-900 font-semibold text-sm mb-1">Ring Main Units</div>
+                                    <div class="text-xs text-slate-600">SF6 insulated RMU stations</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <div class="text-slate-900 font-semibold text-sm mb-1">Masterpact ACB</div>
+                                    <div class="text-xs text-slate-600">High-reliability circuit breakers</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <div class="text-slate-900 font-semibold text-sm mb-1">Altivar VSDs</div>
+                                    <div class="text-xs text-slate-600">Variable speed motor drives</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-6 border-t theme-border flex items-center justify-between">
+                            <span class="text-xs font-mono text-slate-500">Includes Calibration Certificate</span>
+                            <a class="text-xs font-mono text-primary font-bold hover:text-red-700 transition-colors"
+                                href="#quote-wizard">Inquire Schneider Tech →</a>
+                        </div>
+                    </div>
+                    <!-- TE Connectivity Raychem -->
+                    <div
+                        class="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200 hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between shadow-sm">
+                        <div>
+                            <div class="flex items-center justify-between mb-8">
+                                <span
+                                    class="px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-xs font-mono text-primary font-bold uppercase">Authorized
+                                    Distributor</span>
+                                <span class="font-display font-bold text-lg text-slate-900 tracking-wider">TE
+                                    RAYCHEM</span>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-slate-900 mb-4">High-Stress Cable Insulation
+                                &amp; Accessories</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-8">
+                                Engineered to resist the severe humidity, thermal variations, and environmental stresses
+                                of African power distribution lines.
+                            </p>
+                            <!-- Specs Grid -->
+                            <div class="grid grid-cols-2 gap-4 mb-8">
+                                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <div class="text-slate-900 font-semibold text-sm mb-1">Heat-Shrink</div>
+                                    <div class="text-xs text-slate-600">LV, MV (11kV/33kV), &amp; HV Kits</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <div class="text-slate-900 font-semibold text-sm mb-1">Through-Joints</div>
+                                    <div class="text-xs text-slate-600">Hermetic resin moisture seals</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <div class="text-slate-900 font-semibold text-sm mb-1">GIS Connectors</div>
+                                    <div class="text-xs text-slate-600">Screened separable terminations</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <div class="text-slate-900 font-semibold text-sm mb-1">Insulators</div>
+                                    <div class="text-xs text-slate-600">Substation busbar creepage protection</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-6 border-t theme-border flex items-center justify-between">
+                            <span class="text-xs font-mono text-slate-500">Guaranteed Genuine Raychem Seals</span>
+                            <a class="text-xs font-mono text-primary font-bold hover:text-red-700 transition-colors"
+                                href="#quote-wizard">Inquire Raychem Tech →</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- OEM Logo Strip -->
+                <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                    <div
+                        class="text-center text-xs font-mono uppercase tracking-widest text-slate-500 mb-8 font-medium">
+                        Certified Licensors &amp; Component Partners
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center text-center">
+                        <span
+                            class="font-display text-sm font-bold tracking-wider text-slate-700 hover:text-primary transition-colors">SCHNEIDER</span>
+                        <span
+                            class="font-display text-sm font-bold tracking-wider text-slate-700 hover:text-primary transition-colors">TE
+                            RAYCHEM</span>
+                        <span
+                            class="font-display text-sm font-bold tracking-wider text-slate-700 hover:text-primary transition-colors">PERKINS
+                            UK</span>
+                        <span
+                            class="font-display text-sm font-bold tracking-wider text-slate-700 hover:text-primary transition-colors">MTU
+                            ROLLS-ROYCE</span>
+                        <span
+                            class="font-display text-sm font-bold tracking-wider text-slate-700 hover:text-primary transition-colors">SIEMENS</span>
+                        <span
+                            class="font-display text-sm font-bold tracking-wider text-slate-700 hover:text-primary transition-colors">CHANGAN
+                            AUTO</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 05 / SPECIFICATION & RFP WIZARD -->
+        <section class="py-24 lg:py-36 border-b theme-border bg-white" id="quote-wizard">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                    <!-- Left Column -->
+                    <div class="lg:col-span-5">
+                        <span class="text-xs font-mono uppercase tracking-widest text-primary font-bold block mb-3">05 /
+                            SPECIFICATION &amp; RFP WIZARD</span>
+                        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-6">
+                            Direct Engineering Procurement</h2>
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-8">
+                            Configure your requirements across power generation, automotive fleet orders, custom
+                            switchgear, or authorized Schneider/Raychem accessories. Our senior industrial sales
+                            engineers respond within 2 business hours.
+                        </p>
+                        <div class="p-6 rounded-2xl bg-[#F8F9FB] border border-slate-200 space-y-4 shadow-sm">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-xl">mark_chat_unread</span>
+                                <span class="text-sm font-semibold text-slate-900">Government &amp; Large Commercial
+                                    Tenders</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                For major utility projects, state-wide automotive tenders, or multi-megawatt IPP
+                                concessions, contact our executive bidding desk directly:
+                            </p>
+                            <div class="text-xs font-mono text-slate-800 flex flex-wrap items-center gap-2 font-medium">
+                                <a class="text-primary hover:underline font-bold"
+                                    href="mailto:emmanueluko00@gmail.com">emmanueluko00@gmail.com</a><span
+                                    class="text-slate-400">//</span><a class="text-primary hover:underline font-bold"
+                                    href="https://wa.me/2348026250869" target="_blank">WhatsApp: 08026250869</a></div>
+                        </div>
+                    </div>
+                    <!-- Right Column: Interactive Form -->
+                    <div class="lg:col-span-7 rounded-2xl bg-white border border-slate-200 p-8 sm:p-10 shadow-xl">
+                        <form class="space-y-6" id="dealer-quote-form"
+                            onsubmit="event.preventDefault(); document.getElementById('quote-success-banner').classList.remove('hidden');">
+                            <!-- Step 1: Category -->
+                            <div>
+                                <label
+                                    class="block text-xs font-mono uppercase tracking-wider text-slate-600 mb-3 font-semibold">1.
+                                    Select Division or OEM Equipment</label>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                                    <label
+                                        class="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-primary/50 flex items-center gap-2.5 cursor-pointer transition-all">
+                                        <input checked=""
+                                            class="text-primary focus:ring-0 bg-white border-slate-300 accent-[#D71920]"
+                                            name="product_cat" type="radio" value="motors">
+                                        <span class="text-xs font-medium text-slate-900">Mikano Motors</span>
+                                    </label>
+                                    <label
+                                        class="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-primary/50 flex items-center gap-2.5 cursor-pointer transition-all">
+                                        <input
+                                            class="text-primary focus:ring-0 bg-white border-slate-300 accent-[#D71920]"
+                                            name="product_cat" type="radio" value="power">
+                                        <span class="text-xs font-medium text-slate-900">Power Gen</span>
+                                    </label>
+                                    <label
+                                        class="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-primary/50 flex items-center gap-2.5 cursor-pointer transition-all">
+                                        <input
+                                            class="text-primary focus:ring-0 bg-white border-slate-300 accent-[#D71920]"
+                                            name="product_cat" type="radio" value="panels">
+                                        <span class="text-xs font-medium text-slate-900">Switchboards</span>
+                                    </label>
+                                    <label
+                                        class="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-primary/50 flex items-center gap-2.5 cursor-pointer transition-all">
+                                        <input
+                                            class="text-primary focus:ring-0 bg-white border-slate-300 accent-[#D71920]"
+                                            name="product_cat" type="radio" value="schneider">
+                                        <span class="text-xs font-medium text-slate-900">Schneider</span>
+                                    </label>
+                                    <label
+                                        class="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-primary/50 flex items-center gap-2.5 cursor-pointer transition-all">
+                                        <input
+                                            class="text-primary focus:ring-0 bg-white border-slate-300 accent-[#D71920]"
+                                            name="product_cat" type="radio" value="raychem">
+                                        <span class="text-xs font-medium text-slate-900">TE Raychem</span>
+                                    </label>
+                                    <label
+                                        class="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-primary/50 flex items-center gap-2.5 cursor-pointer transition-all">
+                                        <input
+                                            class="text-primary focus:ring-0 bg-white border-slate-300 accent-[#D71920]"
+                                            name="product_cat" type="radio" value="rentals">
+                                        <span class="text-xs font-medium text-slate-900">IPP / Rentals</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Step 2: Capacity & Hub -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-xs font-mono uppercase tracking-wider text-slate-600 mb-2 font-semibold"
+                                        for="capacity-field">2. Target Capacity / Model</label>
+                                    <select
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-primary focus:bg-white"
+                                        id="capacity-field">
+                                        <option>Changan UNI-K (Luxury AWD SUV)</option>
+                                        <option>Deepal S07 Pure Electric SUV</option>
+                                        <option>Changan CS95 7-Seater Executive</option>
+                                        <option>ZNA Rich 6 Double Cabin Pickup</option>
+                                        <option>100 kVA Perkins Diesel Generator</option>
+                                        <option>500 kVA MTU Generator Set</option>
+                                        <option>2,000 kVA IPP Synchronized System</option>
+                                        <option>Form 3 / Form 4 Switchboard Panel</option>
+                                        <option>Schneider 33kV/415V Transformer</option>
+                                        <option>Raychem Heat-Shrink Cable Terminations</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-mono uppercase tracking-wider text-slate-600 mb-2 font-semibold"
+                                        for="location-field">3. Preferred State / Hub</label>
+                                    <select
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-primary focus:bg-white"
+                                        id="location-field">
+                                        <option>Lagos - Victoria Island Headquarters</option>
+                                        <option>Lagos - Ikeja Central Service Complex</option>
+                                        <option>Abuja - Central Business District</option>
+                                        <option>Port Harcourt - Trans Amadi Industrial Hub</option>
+                                        <option>Kano - Bompai Industrial Estate</option>
+                                        <option>Ibadan - Ring Road Showroom</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Step 3: Contact Inputs -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-xs font-mono uppercase tracking-wider text-slate-600 mb-2 font-semibold"
+                                        for="client-name">Full Name</label>
+                                    <input
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-primary focus:bg-white"
+                                        id="client-name" placeholder="Engr. Adeola Bello" required="" type="text">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-mono uppercase tracking-wider text-slate-600 mb-2 font-semibold"
+                                        for="client-email">Work Email</label>
+                                    <input
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-primary focus:bg-white"
+                                        id="client-email" placeholder="corporate@company.ng" required="" type="email">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-mono uppercase tracking-wider text-slate-600 mb-2 font-semibold"
+                                        for="client-phone">Phone Number</label>
+                                    <input
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-primary focus:bg-white"
+                                        id="client-phone" placeholder="+234 800 000 0000" required="" type="tel">
+                                </div>
+                            </div>
+                            <!-- Financing Checkbox -->
+                            <div
+                                class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                                <label class="flex items-center gap-3 cursor-pointer">
+                                    <input
+                                        class="rounded text-primary focus:ring-0 bg-white border-slate-300 accent-[#D71920]"
+                                        type="checkbox">
+                                    <span class="text-xs text-slate-700 font-medium">Include UBA / Partner
+                                        Auto-Financing / Asset Lease Schedule</span>
+                                </label>
+                                <span class="text-[10px] font-mono text-primary font-bold uppercase">Zero Wait</span>
+                            </div>
+                            <!-- Submit Button -->
+                            <button
+                                class="w-full py-4 rounded-full theme-pill-btn font-bold text-xs tracking-wider uppercase shadow-[0_4px_16px_rgba(215,25,32,0.35)] hover:shadow-[0_6px_22px_rgba(215,25,32,0.5)] transition-all flex items-center justify-center gap-2"
+                                type="submit">
+                                <span class="">Generate Official Quotation</span>
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </button>
+                            <!-- Success State -->
+                            <div class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-center gap-3"
+                                id="quote-success-banner">
+                                <span class="material-symbols-outlined text-emerald-600">check_circle</span>
+                                <div>
+                                    <div class="font-bold">Quotation Request Dispatched // Reference #MK-9281</div>
+                                    <div class="text-emerald-700">A dedicated sales engineer has received your spec
+                                        sheet and will email formal pricing shortly.</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CLEAN LUXURY CTA BANNER -->
+        <section class="py-24 lg:py-28 border-b theme-border bg-gradient-to-b from-[#F8F9FB] to-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+                <span class="text-xs font-mono uppercase tracking-widest text-primary font-bold block mb-3">PAN-AFRICAN
+                    REACH</span>
+                <h2
+                    class="font-display text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight max-w-3xl mx-auto mb-6">
+                    Powering Nigeria's Industry with Next-Gen Precision.
+                </h2>
+                <p class="text-slate-600 text-base max-w-xl mx-auto leading-relaxed mb-10 font-normal">
+                    Visit any of our 18 assembly hubs nationwide, inspect our soundproof test rooms, or speak with an
+                    engineering specialist.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-4"><a
+                        class="px-8 py-4 rounded-full theme-pill-btn font-semibold text-xs tracking-wider uppercase shadow-[0_4px_18px_rgba(215,25,32,0.35)] hover:shadow-[0_6px_24px_rgba(215,25,32,0.5)] hover:opacity-95 transition-all"
+                        href="mailto:emmanueluko00@gmail.com">Initiate Project Inquiry</a><a
+                        class="px-8 py-4 rounded-full bg-white border border-slate-300 text-slate-800 font-semibold text-xs tracking-wider uppercase hover:border-primary hover:text-primary transition-all shadow-sm"
+                        href="https://wa.me/2348026250869" target="_blank">WhatsApp: 08026250869</a></div>
+            </div>
+        </section>
+    </main>
+    <!-- REFINED LUXURY FOOTER (SLEEK DEEP GRAPHITE EDITORIAL) -->
+    <footer class="theme-footer text-slate-400 pt-20 pb-12 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <!-- Brand Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-2"><a href="#"><img alt="Mikano International"
+                                class="h-8 w-auto object-contain brightness-0 invert"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdf7qkgHEReGfsmOdwslRfETmb1-kzPoGSIVuoS6I74qbDu3tVRxiXU-XQ4ucIMv_SJx1jrxIdcJwMsK4IXnPm_un0T_nc8acspt2bSMj4n-TAdahtog1lvY_IYwU9LVi-dPmA9SRXkmXlezNg3gBLgCe_7lpCzCHdVpzlwtK7BLOMj3A2FA9NXZ68bpgnXguci6p771Wlq1Q06xFQweVwWtgjgabJyzKQvMD-gHD15EJEV3V0Qfoz"></a>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                        Pan-African heavyweight delivering turnkey Power Generation (MTU, Perkins, YORC), Automotive
+                        transit (Changan, Deepal, Maxus, ZNA), and licensed Schneider Electric / TE Raychem
+                        infrastructure.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 text-[10px] font-mono">
+                        <span
+                            class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300 font-medium">ISO
+                            9001:2015</span>
+                        <span
+                            class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300 font-medium">ISO
+                            45001:2018</span>
+                        <span
+                            class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300 font-medium">SONCAP
+                            Validated</span>
+                    </div>
+                </div>
+                <!-- Col 1 -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-mono uppercase tracking-wider text-white font-semibold">Divisions</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li class=""><a class="hover:text-primary transition-colors" href="#automotive">Mikano
+                                Motors</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" href="#power-gen">Industrial Power
+                                Gen</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" href="#divisions">Custom
+                                Switchboards</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" href="#alliances">Commercial
+                                Lighting</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" href="#power-gen">Generator Rental
+                                Fleet</a></li>
+                    </ul>
+                </div>
+                <!-- Col 2 -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-mono uppercase tracking-wider text-white font-semibold">Alliances</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li class=""><a class="hover:text-primary transition-colors" href="#alliances">Schneider
+                                Electric</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" href="#alliances">TE Connectivity
+                                Raychem</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" href="#power-gen">MTU
+                                Rolls-Royce</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" href="#power-gen">Perkins
+                                Engines</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" href="#automotive">Changan
+                                Automobile</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3 -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-mono uppercase tracking-wider text-white font-semibold">Operations</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li class=""><span class="text-white">WhatsApp:</span> <a
+                                class="text-primary hover:underline font-mono" href="https://wa.me/2348026250869"
+                                target="_blank">08026250869</a></li>
+                        <li class=""><span class="text-white">Email:</span> <a
+                                class="text-primary hover:underline font-mono"
+                                href="mailto:emmanueluko00@gmail.com">emmanueluko00@gmail.com</a></li>
+                        <li class=""><span class="text-white">Headquarters:</span> Victoria Island, Lagos</li>
+                        <li class=""><span class="text-white">Assembly:</span> WAMCO Industrial Hub</li>
+                        <li class=""><span class="text-white">Depots:</span> 18 Locations Nationwide</li>
+                        <li class=""><a class="text-primary hover:underline"
+                                href="mailto:emmanueluko00@gmail.com">Request Dealership RFP</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Bottom Bar -->
+            <div
+                class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p class="">© 2025 Mikano International Limited. All Rights Reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-primary transition-colors" href="#">Terms of Supply</a>
+                    <a class="hover:text-primary transition-colors" href="#">Warranty Disclaimers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
